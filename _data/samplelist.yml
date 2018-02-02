@@ -3,6 +3,10 @@ docs:
 
 - title: Home
   url: index.html
-  
-- title: kN
+
+- title: kNN
   url: kNN.html
+- title: Logistic Regression
+  url: logistic_regression.html
+- title: Decision Trees
+  url: decision_trees.html
