@@ -52,9 +52,10 @@ This gives :
 
 $$IG(M,A)  =  Ent(M) + \sum_{i\in A}\frac{|M_i|}{|M|} \sum_s \frac{|M_i^s|}{|M_i|}  \log( \frac{|M_i^s|}{|M_i|})$$
 
-and since $\sum_{i\in A}|M_i| = |M|$,
+and since $$\sum_{i\in A}|M_i| = |M|$$ ,
 
-$$IG(M,A)  =  Ent(M) + \sum_{i\in A}\frac{1}{|M|} \bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg]$$
+$$IG(M,A)  =  Ent(M) + \sum_{i\in A}\frac{1}{|M|} \bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg] $$
 
 We want the attribute which maximises $IG(M,A)$, but since  $Ent(M)$ is constant, we only need to maximise 
+
 $$\hat{IG}(M,A)  =   \sum_{i\in A}\bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg]\\$$
