@@ -2,4 +2,4 @@
 
 **Algorithms**
 
-* [k-Nearest Neighbors](knn.md)
+* [k-Nearest Neighbors](kNN.html)
