@@ -46,9 +46,5 @@ One of the possible criterion to build a decision network is the information gai
 IG(M,A) & = & Ent(M) - \sum_{i\in A}\frac{|M_i|}{|M|}Ent(M_i)
 `
 
-This math is inline $`a^2+b^2=c^2`$.
-
-This is on a separate line
-```math
-a^2+b^2=c^2
-```
+   When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+  $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
