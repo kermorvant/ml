@@ -4,3 +4,5 @@ docs:
 - title: Home
   url: index.html
   
+- title: kN
+  url: kNN.html

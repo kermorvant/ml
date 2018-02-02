@@ -1,7 +1,8 @@
 theme: jekyll-theme-dinky
 show_downloads: False
 baseurl: /csexed-ml
-title: CentraleSupélec Excutive Education
+title: CSExed
 email: kermorvant@teklia.com
 description: >- # this means to ignore newlines until "baseurl:"
   Authors : Christopher Kermorvant
+markdown: kramdown
