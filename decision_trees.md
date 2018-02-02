@@ -42,21 +42,15 @@ wind | delayed | on time
 One of the possible criterion to build a decision network is the information gain. The information gain of an attribute A is the difference between the entropy of all the samples `M` and the sum of the entropies of the sets obtained by separating the samples according to the variable A. 
 
 
-$$
-IG(M,A) & = & Ent(M) - \sum_{i\in A}\frac{|M_i|}{|M|}Ent(M_i)
-$$
+$$IG(M,A) & = & Ent(M) - \sum_{i\in A}\frac{|M_i|}{|M|}Ent(M_i)$$
 
 For a discrete random variable with $s$ modalities of probability $p_s$, the entropy is computed as : 
 
 $$Ent(M) = - \sum_s p_s \log(p_s)$$
 
 This gives : 
-$$
-IG(M,A) & = & Ent(M) + \sum_{i\in A}\frac{|M_i|}{|M|} \sum_s \frac{|M_i^s|}{|M_i|}  \log( \frac{|M_i^s|}{|M_i|}) \\
-  & =& Ent(M) + \sum_{i\in A}\frac{1}{|M|} \bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg]\\
-$$
+$$IG(M,A) & = & Ent(M) + \sum_{i\in A}\frac{|M_i|}{|M|} \sum_s \frac{|M_i^s|}{|M_i|}  \log( \frac{|M_i^s|}{|M_i|}) \\
+  & =& Ent(M) + \sum_{i\in A}\frac{1}{|M|} \bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg]\\$$
 
 We want the attribute which maximises $IG(M,A)$, but since  $Ent(M)$ is constant, we only need to maximise 
-$$
-\hat{IG}(M,A) & =  &  \sum_{i\in A}\bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg]\\
-$$
+$$\hat{IG}(M,A) & =  &  \sum_{i\in A}\bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg]\\$$
