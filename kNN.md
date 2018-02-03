@@ -61,7 +61,8 @@ The goal of the exercise is to train  kNN classifiers on the classical MNIST dat
 
 ### Feature extraction
 
-TODO
+The first step is to extract features from the images to convert the image into a feature vector. The images all have the same size, 32x32 pixels. We reduce them to 8x8 pixels and use the 64 pixels values vector as the features. The function `extract_features_subresolution` process a given image and return the feature vector. The list of all the images is read from the file `Data/MNIST_all.csv`. The features are stored in a matrix `X` and the target class in a vector `y`.
+
 
 ### Train/dev/test split
 
@@ -71,13 +72,13 @@ When training a classifier, the data **must** be separated into different sets :
 
 > * Use [`train_test_split`](http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html) to create `X_train/y_train` and `X_test/y_test`. Use 80% of the data for training and 20% for testing.
 > * Train a [k-nearest neighbors](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) classififier with k=1
+> * Test the k-NN with k= 1 on both the training and the test set. Print the score produced by `metrics.accuracy_score`
 
 When evaluating a classifier, it is important to report the error rate both on the training and the classification set. These values are needed to understand what is wrong with the classifier and how to improve it.
 
 
 **Question** :
 
-> Test the k-NN with k= 1 on both the training and the test set. Print the score produced by `metrics.accuracy_score`
 
 The main parameter of the kNN algorithm is the number of neighbors (k). The best value for this parameter depends on the classification task and has to be found by trying different values and selecting the one with the best accuracy. However, this search for the best value **must not** be done on the set used to evaluate the classifier (the test set) but on a validation set. See [wikipedia on training, test and validation sets](https://en.wikipedia.org/wiki/Training,_test,_and_validation_sets).
 
