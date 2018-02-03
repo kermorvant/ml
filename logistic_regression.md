@@ -17,7 +17,7 @@ And to go further :
 
 **Question 7** : 
 
-> Load the MNIST Data and train a Logistic Regression classifier on 80% and test on 20% of the samples. Report the accuracy and compare to the best result of the kNN classifier.
+> Using the MNIST Data and train a [Logistic Regression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) classifier (`clf = linear_model.LogisticRegression()`) on 80% and test on 20% of the samples. Report the accuracy and compare to the best result of the kNN classifier.
 
 The accuracy of the classifiers depends on the size of the training set : the more data, the better accuracy. Will study the impact of the size of the training set on kNN and Logisitic Regression.
 
