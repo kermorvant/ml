@@ -29,6 +29,8 @@ The distance between all the objects has been computed :
 
 ## Code
 
+Upload the [template](notebooks/knn_template.ipynb) in your jupyter and use it as a starting point.
+
 The following code uses scikit-learn kNN to make the prediction : 
 
 ```
@@ -80,7 +82,7 @@ When evaluating a classifier, it is important to report the error rate both on t
 **Question** :
 
 
-The main parameter of the kNN algorithm is the number of neighbors (k). The best value for this parameter depends on the classification task and has to be found by trying different values and selecting the one with the best accuracy. However, this search for the best value **must not** be done on the set used to evaluate the classifier (the test set) but on a validation set. See [wikipedia on training, test and validation sets](https://en.wikipedia.org/wiki/Training,_test,_and_validation_sets).
+The main parameter of the kNN algorithm is the number of neighbors (k). The best value for this parameter depends on the classification task and has to be found by trying different values and selecting the one with the best accuracy. However, this search for the best value **must not** be done on the set used to evaluate the classifier (the test set) but on a validation set. 
 
 **Question** : 
 
