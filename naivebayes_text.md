@@ -2,6 +2,57 @@
 
 Automatic text classification is one of the standard Machine Learning applications. The first service based on Machine Learing used by almost every internet users concern text classification : spam filtering.
 
+## A simple example on a toy problem
+
+You want to build a email classification system for your company using a Naive Bayes classifier.
+Emails must be classified into 2 different classes : *membership* or *complaint*.
+
+ The classification will be based on the presence or absence of 8 words : 
+ `membership, new, IBAN, address, dissatisfied, unacceptable, sales, offers `
+ 
+The training sample is composed of following documents, presented using a bag-of-word representation : 
+
+
+join | new | IBAN | address | dissatisfied | unacceptable | sales | offers | class 
+---|--------|-------|--------|--------|--------|--------|--------|--------
+1|0|1|1|1|0|1|1| membership
+0|0|1|0|0|0|0|0| membership
+1|1|0|1|0|0|0|0| membership
+1|1|0|1|0|0|0|1| membership
+1|1|0|1|1|0|0|0| membership
+0|0|0|1|0|1|0|0| membership
+1|1|1|1|1|0|1|0| membership
+0|0|0|1|0|1|1|0| complaint
+1|0|1|1|1|0|1|0| complaint
+0|1|0|0|1|1|0|1| complaint
+0|0|0|1|1|1|1|0| complaint
+0|0|0|1|1|1|0|0| complaint
+1|1|0|0|0|0|0|0| complaint
+
+
+
+We denote by  $Y$ the document class and  $X=X_1,\cdots,X_8$ the bag of word features.
+
+
+Compute the following probabilities :
+
+* P(Y=membership)
+* P(Y=complaint)
+* $$\forall i \quad P(X_i =1 | Y=membership)$$
+* $$\forall i \quad P(X_i =0 | Y=membership)$$
+* $$\forall i \quad P(X_i =0 | Y=membership)$$
+* $$\forall i \quad P(X_i =1 | Y=complaint)$$
+* $$\forall i \quad P(X_i =0 | Y=complaint)$$
+
+Based on these probabilities, predict the class of the following document using a Naives Bayes classifier : 
+
+
+>Monsieur,
+> je vous adresse ce courrier car je suis très mécontent de mon abonnement téléphonique. Je n'arrive jamais à téléphoner ! C'est inadmissible !J'attends un geste commercial de votre part."
+
+
+
+
 ## LeMonde2003 Dataset
 
 In this example, we will apply classification algorithms to newspaper articles published in 2003 in *Le Monde*. The dataset can be dowloaded in tab separated CSV format [here](http://data.teklia.com/Texts/LeMonde2003.csv.zip).
