@@ -34,7 +34,7 @@ join |  address | unacceptable  | class
 
 
 
-We denote by  $Y$ the document class and  $X=X_1,\cdots,X_8$ the bag of word features.
+We denote by  $Y$ the document class and  $X=X_1,\cdots,X_3$ the bag of word features.
 
 
 Compute the following probabilities :
@@ -43,32 +43,57 @@ Compute the following probabilities :
 * $$P(Y=complaint)$$
 * $$\forall i \quad P(X_i =1 | Y=membership)$$
 * $$\forall i \quad P(X_i =0 | Y=membership)$$
-* $$\forall i \quad P(X_i =0 | Y=membership)$$
 * $$\forall i \quad P(X_i =1 | Y=complaint)$$
 * $$\forall i \quad P(X_i =0 | Y=complaint)$$
 
 Based on these probabilities, predict the class of the following document using a Naives Bayes classifier : 
 
 
->Monsieur,
-> je vous adresse ce courrier car je suis très mécontent de mon abonnement téléphonique. Je n'arrive jamais à téléphoner ! C'est inadmissible !J'attends un geste commercial de votre part."
+>Sir, I have a new problem with my account : I can not login. This is the third time this week that my account is down and I can join no one. This is unacceptable.
 
+### Code
 
+Using the following DataFrame 
+
+```
+df = pd.DataFrame([
+    [1,1,0, 'membership'],
+[0,0,0, 'membership'],
+[1,1,0, 'membership'],
+[1,1,0, 'membership'],
+[1,1,0, 'membership'],
+[0,1,1, 'membership'],
+[1,1,0, 'membership'],
+[0,1,1, 'complaint'],
+[1,1,0, 'complaint'],
+[0,0,1, 'complaint'],
+[0,1,1, 'complaint'],
+[0,1,1, 'complaint'],
+[1,0,0, 'complaint'],
+    ],
+    columns=['join',  'address',  'unacceptable', 'class'],
+)
+```
+
+> * train a [Bernouilli Naive Bayes](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html)
+Predict the class of the sample `[1,0,1]`, corresponding to the document of the previous question. 
+> * check the different probabilities computer for the previous question :
+>  * `clf.feature_count_` :  the count for each feature per class $C(X_i =1 | Y=c)$
+>  * `clf.feature_log_prob_` : the log probability for each feature per class $log(P(X_i =1 | Y=c))$
+>  * `clf.class_log_prior_` : the log prior probabilities for each class $log(P(Y=c))$
+> * check your prediction with `clf.predict_proba([1,0,1])` and `clf.predict_log_proba([1,0,1])`
 
 
 ## LeMonde2003 Dataset
 
-In this example, we will apply classification algorithms to newspaper articles published in 2003 in *Le Monde*. The dataset can be dowloaded in tab separated CSV format [here](http://data.teklia.com/Texts/LeMonde2003.csv.zip).
+In this example, we will apply classification algorithms to newspaper articles published in 2003 in *Le Monde*. The dataset can be dowloaded in  CSV format [here](http://data.teklia.com/Texts/LeMonde2003_9classes.csv).
 
-These articles concern different subjects but we will consider only articles related to the following subjects : entreprises (ENT), international (INT), arts (ART), société (SOC), France (FRA), sports (SPO), livres (LIV), télévision (TEL) et les articles publiés à la une (UNE).
+These articles concern different subjects but we will consider only articles related to the following subjects : entreprises (ENT), international (INT), arts (ART), société (SOC), France (FRA), sports (SPO), livres (LIV), télévision (TEL) and the font page articles (UNE).
 
 
-**Question 1**:
+> * Load the CSV file `LeMonde2003_9classes.csv` containing the articles using `pd.read_csv`. 
+> * Plot the frequency histogram of the categories using [`countplot`](https://seaborn.pydata.org/tutorial/categorical.html) : `sns.countplot(data=df2,y='category')`
 
-> * Load the CSV file `LeMonde2003.csv` containing the articles using `pd.read_csv`. The field separator is '\t'. 
-> * Drop the empty lines using  `dropna`.
-> * Keep only the articles of the categories `categories = ['ENT','INT','ART','SOC','FRA','SPO','LIV','TEL','UNE']` using [`isin`](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.isin.html)
-> * Plot the frequency histogram of the categories using [`countplot`](https://seaborn.pydata.org/tutorial/categorical.html)
 
 ## Bag-of-word representation
 
@@ -90,7 +115,7 @@ The encoder must first be trained on the train set and applied to the different 
     X_train_counts = vectorizer.transform(X_train)
     X_test_counts = vectorizer.transform(X_test)
         
-**Question 2**:
+**Question**:
 
 > * Split the dataset LeMonde2003 into train/dev/test set. 
 > * For each set, transform the text of the articles into vectors using the `CountVectorizer` with `max_features=1000` words.
@@ -98,9 +123,9 @@ The encoder must first be trained on the train set and applied to the different 
 
 ## Mutlinomial Naive Bayes classifier
 
-The *Multinomial Naive Bayes* classifier is a statistical classifier that can be used for document classification. This classifier estimates for each class, the probability that a given word appears in a document from this class. For example, in a news article about sport, the word `player` is more likely to appear than the word `profit`. The probablities are estimated simply by counting for each class the number of times each words appears. For more details on the Multinomial Naive Bayes, see [the wikipedia article on Naive Bayes classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier#Document_classification) or the [scikit-learn documentation](http://scikit-learn.org/stable/modules/naive_bayes.html)
+The *Multinomial Naive Bayes* classifier is a statistical classifier that can be used for document classification. This classifier estimates for each class, the probability that a given word appears in a document from this class. For example, in a news article about sport, the word `player` is more likely to appear than the word `profit`. The probablities are estimated simply by counting for each class the number of times each words appears. For more details on the Multinomial Naive Bayes,  the [scikit-learn documentation](http://scikit-learn.org/stable/modules/naive_bayes.html)
 
-**Question 3**:
+**Question**:
 
 > * Train a multinomial Naive Bayes classifier on the dataset LeMonde. Find the best values for the parameters  `max_features` and `alpha`. Report the train/valid/test error rates.
 
@@ -114,7 +139,7 @@ With scikit-learn, the `TfidfTransformer` is applied after the `CountVectorizer`
  	X_train_tf = tf_transformer.transform(X_train_counts)
 	X_test_tf = tf_transformer.transform(X_test_counts)
 	
-**Question 4**:
+**Question**:
 
 > * Use the TF-IDF representation to train a Multinomial Naive Bayes classifier. Report your best test error rate and the error rates for all the configurations tested.
 
@@ -125,7 +150,7 @@ The classification error rate give an evaluation of the performance for all the 
 * [metrics.classification_report](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html) provides a detailed analysis per class : the precision (amongst all the example classified as class X, how many are really from the classX) and the recall (amongst all the example that are from the class X, how many are classified as class X) and the F-Score which is as a weighted harmonic mean of the precision and recall.
 * [metrics.confusion_matrix](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html) which give the confusions between the classes.
 
-**Question 5**:
+**Question**:
 
 > * Report the `classification_report` for your best classifier. Which classes have the best scores ? Why ?
 > * Report the `confusion_matrix` for your best classifier. Which classes are the most confused ? Why ?
