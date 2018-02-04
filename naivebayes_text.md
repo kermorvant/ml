@@ -1,8 +1,10 @@
-# Document classification
+# Naive Bayes
 
-Automatic text classification is one of the standard Machine Learning applications. The first service based on Machine Learing used by almost every internet users concern text classification : spam filtering.
+
 
 ## A simple example on a toy problem
+
+Automatic text classification is one of the standard Machine Learning applications. Spam filtering was the first service based on Machine Learing used by almost every internet users.
 
 You want to build a email classification system for your company using a Naive Bayes classifier.
 Emails must be classified into 2 different classes : *membership* or *complaint*.
