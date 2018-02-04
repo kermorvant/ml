@@ -4,8 +4,9 @@ One of the most simple yet effective methods to automaticlally classify examples
 
 
 
-## Exercise
+## A simple example on a toy problem
 
+### Excercise
 
 You need to classify objects on which you have measured length and width. The following objetcs have already been measured : 
  
@@ -27,7 +28,7 @@ The distance between all the objects has been computed :
 > What is the predicted class for the points D and I using a kNN classifier with k=1 and for k= 2 ?
 > 
 
-## Code
+### Code
 
 Upload the [template](notebooks/knn_template.ipynb) in your jupyter and use it as a starting point.
 
@@ -57,7 +58,7 @@ See the [KNN scikit-learn documentation](http://scikit-learn.org/stable/modules/
 >
 >
 
-## Experiment
+## Experiments on the MNIST dataset
 
 The goal of the exercise is to train  kNN classifiers on the classical MNIST database. This database is very popular in the machine learning community as a first test for new algorithms. This dataset is quite simple and artificial : having good results on MNIST does not mean that your algorithm is good, but having bad results surely means that you have to improve your algorithm. You can find reference results [here](http://yann.lecun.com/exdb/mnist/).
 
@@ -78,8 +79,7 @@ When training a classifier, the data **must** be separated into different sets :
 
 When evaluating a classifier, it is important to report the error rate both on the training and the classification set. These values are needed to understand what is wrong with the classifier and how to improve it.
 
-
-**Question** :
+### Hyperparameter optimization
 
 
 The main parameter of the kNN algorithm is the number of neighbors (k). The best value for this parameter depends on the classification task and has to be found by trying different values and selecting the one with the best accuracy. However, this search for the best value **must not** be done on the set used to evaluate the classifier (the test set) but on a validation set. 
