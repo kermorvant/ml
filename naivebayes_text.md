@@ -7,27 +7,30 @@ Automatic text classification is one of the standard Machine Learning applicatio
 You want to build a email classification system for your company using a Naive Bayes classifier.
 Emails must be classified into 2 different classes : *membership* or *complaint*.
 
- The classification will be based on the presence or absence of 8 words : 
- `membership, new, IBAN, address, dissatisfied, unacceptable, sales, offers `
+ The classification will be based on the presence or absence of 3 words : 
+ 
+ `join, address,  unacceptable, `
  
 The training sample is composed of following documents, presented using a bag-of-word representation : 
 
 
-join | new | IBAN | address | dissatisfied | unacceptable | sales | offers | class 
----|--------|-------|--------|--------|--------|--------|--------|--------
-1|0|1|1|1|0|1|1| membership
-0|0|1|0|0|0|0|0| membership
-1|1|0|1|0|0|0|0| membership
-1|1|0|1|0|0|0|1| membership
-1|1|0|1|1|0|0|0| membership
-0|0|0|1|0|1|0|0| membership
-1|1|1|1|1|0|1|0| membership
-0|0|0|1|0|1|1|0| complaint
-1|0|1|1|1|0|1|0| complaint
-0|1|0|0|1|1|0|1| complaint
-0|0|0|1|1|1|1|0| complaint
-0|0|0|1|1|1|0|0| complaint
-1|1|0|0|0|0|0|0| complaint
+join |  address | unacceptable  | class 
+---|--------|-------|--------
+1|1|0| membership
+0|0|0| membership
+1|1|0| membership
+1|1|0| membership
+1|1|0| membership
+0|1|1| membership
+1|1|0| membership
+0|1|1| complaint
+1|1|0| complaint
+0|0|1| complaint
+0|1|1| complaint
+0|1|1| complaint
+1|0|0| complaint
+
+
 
 
 
@@ -36,8 +39,8 @@ We denote by  $Y$ the document class and  $X=X_1,\cdots,X_8$ the bag of word fea
 
 Compute the following probabilities :
 
-* P(Y=membership)
-* P(Y=complaint)
+* $$P(Y=membership)$$
+* $$P(Y=complaint)$$
 * $$\forall i \quad P(X_i =1 | Y=membership)$$
 * $$\forall i \quad P(X_i =0 | Y=membership)$$
 * $$\forall i \quad P(X_i =0 | Y=membership)$$
