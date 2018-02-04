@@ -8,5 +8,5 @@ docs:
   url: kNN.html
 - title: Logistic Regression
   url: logistic_regression.html
-- title: Decision Trees
-  url: decision_trees.html
+- title: Naive Bayes
+  url: naivebayes_text.html
