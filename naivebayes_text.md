@@ -90,13 +90,13 @@ df = pd.DataFrame([
 )
 ```
 
-> * train a [Bernouilli Naive Bayes](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html)
-Predict the class of the sample `[1,0,1]`, corresponding to the document of the previous question. 
-> * check the different probabilities computer for the previous question :
+> * Train a [Bernouilli Naive Bayes](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html) on all the data.
+> * Predict the class of the sample `[1,0,1]`, corresponding to the document of the previous question. 
+> * Check the different probabilities computer for the previous question :
 >  * `clf.feature_count_` :  the count for each feature per class $C(X_i =1 \| Y=c)$
 >  * `clf.feature_log_prob_` : the log probability for each feature per class $log(P(X_i =1 \| Y=c))$
 >  * `clf.class_log_prior_` : the log prior probabilities for each class $log(P(Y=c))$
-> * check your prediction with `clf.predict_proba([1,0,1])` and `clf.predict_log_proba([1,0,1])`
+> * Check your prediction with `clf.predict_proba([1,0,1])` and `clf.predict_log_proba([1,0,1])`
 
 
 ## LeMonde2003 Dataset
@@ -106,7 +106,7 @@ In this example, we will apply classification algorithms to newspaper articles p
 These articles concern different subjects but we will consider only articles related to the following subjects : entreprises (ENT), international (INT), arts (ART), société (SOC), France (FRA), sports (SPO), livres (LIV), télévision (TEL) and the font page articles (UNE).
 
 
-> * Load the CSV file `LeMonde2003_9classes.csv` containing the articles using `pd.read_csv`. 
+> * Load the CSV file `LeMonde2003_9classes.csv` containing the articles using [pd.read_csv](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html) . 
 > * Plot the frequency histogram of the categories using [`countplot`](https://seaborn.pydata.org/tutorial/categorical.html) : `sns.countplot(data=df2,y='category')`
 
 
