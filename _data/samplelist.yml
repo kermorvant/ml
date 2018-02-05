@@ -10,3 +10,5 @@ docs:
   url: logistic_regression.html
 - title: Naive Bayes
   url: naivebayes_text.html
+- title: Decsision Trees
+  url: decision_trees.html
