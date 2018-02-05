@@ -53,7 +53,7 @@ $$\sum_{i\in A}\frac{|M_i|}{|M|}Ent(M_i)$$
 
 For the attribute *day*, we have 
 
-$$\sum_{i\in A}\frac{|M_i|}{|M|}Ent(M_i) = \frac{9}{12}* (\frac{4}{9}log2(\frac{4}{9}) +\frac{5}{9}log2(\frac{5}{9}) +\frac{3}{12}* (\frac{2}{3}log2(\frac{2}{3}) +\frac{1}{3}log2(\frac{1}{3})$$
+$$\sum_{i\in A}\frac{|M_i|}{|M|}Ent(M_i) = \frac{9}{12}* \left( \frac{4}{9}log2(\frac{4}{9}) +\frac{5}{9}log2(\frac{5}{9})\right) + \frac{3}{12} * \left( \frac{2}{3}log2(\frac{2}{3}) +\frac{1}{3}log2(\frac{1}{3}) \right) $$
 
 which is 0.97. For the attribute *company*, this formula gives 0.92.
 
