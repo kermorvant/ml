@@ -4,11 +4,11 @@ docs:
 - title: Home
   url: index.html
 
-- title: Nearest Neightbors
+- title: Nearest Neighbors
   url: kNN.html
 - title: Logistic Regression
   url: logistic_regression.html
 - title: Naive Bayes
   url: naivebayes_text.html
-- title: Decsision Trees
+- title: Decision Trees
   url: decision_trees.html

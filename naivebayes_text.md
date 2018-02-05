@@ -38,20 +38,31 @@ join |  address | unacceptable  | class
 
 We denote by  $Y$ the document class and  $X=X_1,\cdots,X_3$ the bag of word features.
 
-
-Compute the following probabilities :
-
-* $$P(Y=membership)$$
-* $$P(Y=complaint)$$
-* $$\forall i \quad P(X_i =1 | Y=membership)$$
-* $$\forall i \quad P(X_i =0 | Y=membership)$$
-* $$\forall i \quad P(X_i =1 | Y=complaint)$$
-* $$\forall i \quad P(X_i =0 | Y=complaint)$$
+**Question**:
+> Compute the frquency tables for each event and each class
+> 
+> Class |  "join" present | "address" present  | "unacceptable" present 
+> ---|--------|-------|--------
+> membership | | |
+> complaint | | |
+>  
+> Compute the following probabilities 
+>
+>* $$P(Y=membership)$$
+>* $$P(Y=complaint)$$
+>* $$\forall i \quad P(X_i =1 | Y=membership)$$
+>* $$\forall i \quad P(X_i =0 | Y=membership)$$
+>* $$\forall i \quad P(X_i =1 | Y=complaint)$$
+>* $$\forall i \quad P(X_i =0 | Y=complaint)$$
+> 
 
 Based on these probabilities, predict the class of the following document using a Naives Bayes classifier : 
 
 
 >Sir, I have a new problem with my account : I can not login. This is the third time this week that my account is down and I can join no one. This is unacceptable.
+>
+> Using the Bayes Formula
+> $$ P(Y\|X_1,X_2,X_3) = \frac{P(X_1\|Y)P(X_2\|Y)P(X_3\|Y)P(Y)}{P(X)}$$
 
 ### Code
 
