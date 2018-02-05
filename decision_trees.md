@@ -4,7 +4,7 @@
 
 Paris airport wants to predict flight delays. They have collected a sample of flight conditions in the following table:
 
- | wind | season | company | day | status
+ id | wind | season | company | day | status
 ---|--------|-------|--------|--------|--------
 1 | windy | summer | AirFrance | week_day | on_time
 2 | windy | winter | EasyJet | week_day | delayed
@@ -52,7 +52,9 @@ This gives :
 
 $$IG(M,A)  =  Ent(M) + \sum_{i\in A}\frac{|M_i|}{|M|} \sum_s \frac{|M_i^s|}{|M_i|}  \log( \frac{|M_i^s|}{|M_i|})$$
 
-and since $\sum_{i\in A}|M_i| = |M|$ ,
+and since 
+
+$$\sum_{i\in A}|M_i| = |M|$$ 
 
 $$IG(M,A)  =  Ent(M) + \sum_{i\in A}\frac{1}{|M|} \bigg[\big(\sum_s |M_i^s|  \log(|M_i^s| )) - |M_i| \log(|M_i|) \bigg] $$
 

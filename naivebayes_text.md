@@ -64,7 +64,7 @@ We want to predict the class of the following document using a Naives Bayes clas
 **Question**:
 >Based on the probabilities computed before, compute the most probable class using the Bayes Formula :
 >
-> $$ P(Y\|X_1,X_2,X_3) = \frac{P(X_1\|Y)P(X_2\|Y)P(X_3\|Y)P(Y)}{P(X)}$$
+> $$ P(Y | X_1,X_2,X_3) = \frac{P(X_1 | Y)P(X_2 | Y)P(X_3 | Y)P(Y)}{P(X)}$$
 
 ### Code
 
