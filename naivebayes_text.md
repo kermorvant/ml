@@ -136,11 +136,11 @@ The encoder must first be trained on the train set and applied to the different 
 
 ## Mutlinomial Naive Bayes classifier
 
-The *Multinomial Naive Bayes* classifier is a statistical classifier that can be used for document classification. This classifier estimates for each class, the probability that a given word appears in a document from this class. For example, in a news article about sport, the word `player` is more likely to appear than the word `profit`. The probablities are estimated simply by counting for each class the number of times each words appears. For more details on the Multinomial Naive Bayes,  the [scikit-learn documentation](http://scikit-learn.org/stable/modules/naive_bayes.html)
+The *Multinomial Naive Bayes* classifier is a statistical classifier that can be used for document classification. This classifier estimates for each class, the probability that a given word appears in a document from this class. For example, in a news article about sport, the word `player` is more likely to appear than the word `profit`. The probablities are estimated simply by counting for each class the number of times each words appears. For more details on the Multinomial Naive Bayes,  see the [scikit-learn user guide](http://scikit-learn.org/stable/modules/naive_bayes.html)  and [documentation](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB).
 
 **Question**:
 
-> * Train a multinomial Naive Bayes classifier on the dataset LeMonde. Find the best values for the parameters  `max_features` and `alpha`. Report the train/valid/test error rates.
+> * Train a multinomial Naive Bayes classifier on the dataset LeMonde. Find the best values for the parameters  `max_features` for `CountVectorizer` and `alpha` for `MultinomialNB` . Report the train/valid/test error rates.
 
 ## TF-IDF representation
 
