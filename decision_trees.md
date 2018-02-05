@@ -33,7 +33,7 @@ day | delayed | on time
  week-day | 4 | 5 
  week-end | 2 | 1 
 
-One of the possible criterion to build a decision network is the information gain. The information gain of an attribute A is the difference between the entropy of all the samples `M` and the sum of the entropies of the sets obtained by separating the samples according to the variable A. 
+One of the possible criterion to build a decision network is the information gain (IG). The information gain of an attribute A is the difference between the entropy of all the samples `M` and the sum of the entropies of the sets obtained by separating the samples according to the variable A. 
 
 
 $$IG(M,A)  =  Ent(M) - \sum_{i\in A}\frac{|M_i|}{|M|}Ent(M_i)$$
