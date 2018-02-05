@@ -4,6 +4,8 @@
 
 ## A simple example on a toy problem
 
+### Exercise
+
 Automatic text classification is one of the standard Machine Learning applications. Spam filtering was the first service based on Machine Learing used by almost every internet users.
 
 You want to build a email classification system for your company using a Naive Bayes classifier.
