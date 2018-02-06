@@ -127,6 +127,7 @@ Scikit-learn proposes different methods to encode text into vectors : [CountVect
 
 The encoder must first be trained on the train set and applied to the different sets, for example with the 1000  words : 
 
+	from sklearn.feature_extraction.text import CountVectorizer
 	vectorizer = CountVectorizer(max_features=1000)
     vectorizer.fit(X_train)
     X_train_counts = vectorizer.transform(X_train)
