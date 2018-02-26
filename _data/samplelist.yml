@@ -5,10 +5,10 @@ docs:
   url: index_ml_python.html
 
 - title: Nearest Neighbors
-  url: python/kNN.html
+  url: kNN.html
 - title: Logistic Regression
-  url: python/logistic_regression.html
+  url: logistic_regression.html
 - title: Naive Bayes
-  url: python/naivebayes_text.html
+  url: naivebayes_text.html
 - title: Decision Trees
-  url: python/decision_trees.html
+  url: decision_trees.html
