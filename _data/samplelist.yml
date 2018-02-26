@@ -2,13 +2,13 @@ docs_list_title: CSExed ML
 docs:
 
 - title: Home
-  url: index.html
+  url: index_ml_python.html
 
 - title: Nearest Neighbors
-  url: kNN.html
+  url: python/kNN.html
 - title: Logistic Regression
-  url: logistic_regression.html
+  url: python/logistic_regression.html
 - title: Naive Bayes
-  url: naivebayes_text.html
+  url: python/naivebayes_text.html
 - title: Decision Trees
-  url: decision_trees.html
+  url: python/decision_trees.html

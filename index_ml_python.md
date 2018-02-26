@@ -1,3 +1,6 @@
+---
+layout: python
+---
 # Introduction to Machine Learning in python
 
 These practical examples provide an introduction to Machine Learning in python. They are based on Python3, jupyter, [scitkit-learn](http://scikit-learn.org/), [pandas](http://pandas.pydata.org/), [seaborn](https://seaborn.pydata.org/). As shown in [Kaggle 2017 survey](https://www.kaggle.com/ash316/novice-to-grandmaster), these libraries are widely used by data scientists :
