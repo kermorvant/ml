@@ -153,6 +153,7 @@ The `CountVectorizer` encodes the text using the raw frequencies of the words. H
 
 With scikit-learn, the `TfidfTransformer` is applied after the `CountVectorizer` :
 
+	from sklearn.feature_extraction.text import TfidfTransformer
 	tf_transformer = TfidfTransformer().fit(X_train_counts)
  	X_train_tf = tf_transformer.transform(X_train_counts)
 	X_test_tf = tf_transformer.transform(X_test_counts)

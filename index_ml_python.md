@@ -20,10 +20,10 @@ These library are open source and commercially usable - BSD license
 
 **Practical examples**
 
-* [k-Nearest Neighbors](kNN.html) : Neighbors classifier. 
+* [k-Nearest Neighbors](python/kNN.html) : Neighbors classifier. 
  * a simple excercise on 10 data points in 2D
  * image classification on the classical MNIST dataset with k-Nearest 
-* [Logistic Regression](logistic_regression.html) : image classification on MNIST and training/testing curves.
-* [Naive Bayes](naivebayes_text.html) : text classification with Naive Bayes.
-* Decsison Trees
-* [SVM](svm.html) : hyperparameter optimization for image classification on MNIST
+* [Logistic Regression](python/logistic_regression.html) : image classification on MNIST and training/testing curves.
+* [Naive Bayes](python/naivebayes_text.html) : text classification with Naive Bayes.
+* [Decsison Trees](python/decision_trees.html)
+* [SVM](python/svm.html) : hyperparameter optimization for image classification on MNIST
