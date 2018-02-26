@@ -1,3 +1,6 @@
+---
+layout: python
+---
 ## Logistic regression
 
 Another simple yet very effective classifier is the logisitic regression. This classifier is a version of the linear regression model adapted to classification. 
@@ -14,7 +17,7 @@ The accuracy of the classifiers depends on the size of the training set : the mo
 For this study, we first separate the data in train/test set with 80%/20% ratio. Then we train the classifier on an increasing training set corresponding to the sizes `[20,100,300,600,900,1500,2000]`. We will always be tested on the same test set (the original one). The following Figure explains the different splits : 
 
 <p align="center">
-  <img src="images/learning_curve_sets.png" width="300" >
+  <img src="../images/learning_curve_sets.png" width="300" >
 </p>
 
 
@@ -25,7 +28,7 @@ For this study, we first separate the data in train/test set with 80%/20% ratio.
 > * Plot the training curves on a plot similar to : 
 
 <p align="center">
-  <img src="images/training_curves.png" width="300" align="center">
+  <img src="../images/training_curves.png" width="300" align="center">
 </p>
 
 You can use [pandas plot function](https://pandas.pydata.org/pandas-docs/stable/visualization.html#basic-plotting-plot).
@@ -35,7 +38,7 @@ When more data is available, not only the training of the classifier is improved
 
 
 <p align="center">
-  <img src="images/testing_curve_sets.png" width="300" >
+  <img src="../images/testing_curve_sets.png" width="300" >
 </p>
 
 The pseudo-code for computing the test set mean and standard deviation is: 
@@ -57,7 +60,7 @@ The pseudo-code for computing the test set mean and standard deviation is:
 
 
 <p align="center">
-  <img src="images/testing_curves.png" width="300" >
+  <img src="../images/testing_curves.png" width="300" >
 </p>
 
 > How do you see that the estimation of the accuracy is more accurate when the test set size increases ?

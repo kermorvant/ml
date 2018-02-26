@@ -1,3 +1,6 @@
+---
+layout: python
+---
 ## Support Vector Machines
 
 The two classifiers Nearest Neighbors and Logisitic Regression are simple and suffer from many limitations :
@@ -10,7 +13,7 @@ Let's illustrate these points : (illustrations are [wikipedia in French](https:/
 First, let's suppose that we have only 2 classes (`+` and `-`) and that the data is linealy separable, which means that we can separate the 2 classes using a line (in 2 dimensions). 
 
 <p align="center">
-  <img src="images/plusieurs_separatrice_lineaire.png" width="300" >
+  <img src="../images/plusieurs_separatrice_lineaire.png" width="300" >
 </p>
 
 Several separating lines are possible. Which one should we choose in order to minimize the error on the test set ? **The first idea** is to choose the line which is far from the points at the boundaries. 
@@ -44,19 +47,19 @@ The RBF kernel has two main parameters that must be optimized on the data : `C` 
 `C` is a parameter common to all SVM classifier : it controls how many examples are allowed to be badly classified during the optimization. For small values of C, some training example are allowed to be misclassified if the margin  (the distance between the separating line and the support vector) is large. For large values of C, the algorithm tries to minimize the number of misclassified training example, even if it lead to a small margin. The impact of the value for C is shown on the following figure : 
 
 <p align="center">
-  <img src="images/svm_values_for_C.png" width="400" >
+  <img src="../images/svm_values_for_C.png" width="400" >
 </p>
  
 `gamma` is a parameter controlling the *spread* of the RBF kernel : if `gamma` is large, the kernel takes into account many training samples and the decision boundary is smooth. When `gamma` is large, the kernel is focused on few training examples and the decision boundary is complex. The impact of `gamma` is illustrated on the following Figures : 
 
 - `gamma` = 1
 <p align="center">
-  <img src="images/svc_parameters_using_rbf_kernel_17_0.png" width="300" >
+  <img src="../images/svc_parameters_using_rbf_kernel_17_0.png" width="300" >
 </p>
 
 - `gamma` = 100
 <p align="center">
-  <img src="images/svc_parameters_using_rbf_kernel_21_0.png" width="300" >
+  <img src="../images/svc_parameters_using_rbf_kernel_21_0.png" width="300" >
 </p>
 
 We will optimize a RBF kernel on MNIST.

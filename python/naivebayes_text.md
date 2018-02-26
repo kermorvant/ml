@@ -1,6 +1,7 @@
+---
+layout: python
+---
 # Naive Bayes
-
-
 
 ## A simple example on a toy problem
 

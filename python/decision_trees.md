@@ -1,3 +1,6 @@
+---
+layout: python
+---
 # Decision Trees
 
 ## A simple example on a toy problem

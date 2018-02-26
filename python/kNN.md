@@ -1,3 +1,6 @@
+---
+layout: python
+---
 # k-Nearest Neighbors
 
 One of the most simple yet effective methods to automaticlally classify examples is the K-Nearest Neighbors	algorithm (KNN). This algorithm is instance-based and non parametric : it does not try to model the examples to take a decision and, at test time, it only compares the new examples to the ones already seen during the training phase.
@@ -18,10 +21,10 @@ The classes of the points are the following :
 * classe 2 : F, G, H, and J
 
 
-![](images/exo_knn_points.png)
+![](../images/exo_knn_points.png)
  
 The distance between all the objects has been computed : 
-![](images/exo_knn_distances.png)
+![](../images/exo_knn_distances.png)
 
 
 **Question:**
