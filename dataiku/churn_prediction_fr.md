@@ -133,4 +133,21 @@ Examinons les variables les plus importantes :
 
 Un modèle RandomForest est composé de nombreux arbres de décision participant à la décision finale par un vote pondéré. Il n'est donc pas aisé d'examiner chacun des arbres. Par contre, il est possible de visualiser quelles sont les variables les plus utilisées et les plus importantes pour l'ensemble des arbres. Dans notre cas, la variable la plus importante est `Total_Charge`, suivie de `CustServ_Calls`. 
 
+## Entrainement d'un modèle interprêtable : Arbre de décision
+
+Même s'ils ne sont pas les modèles les plus performants, les arbres de décisions ont l'avantage d'être interprêtables.
+
+> * Visuliser le dataset `telco_customers_scored`
+> * Cliquer sur *LAB*, *Visual Analysis* puis *QUICK MODEL* et *Prediction*
+> * Choisir la variable à prédire : *Churn* puis *Decision Tree* puis *Create* et *TRAIN*
+
+Une fois le modèle entrainé,  le sélectionner puis afficher *INTERPRETATION / Decision Tree*
+
+<p align="center">
+  <img src="images/churn_decision_tree.png" width="600" >
+</p>
+
+L'arbre de décision présente les critères utilisés, les couleurs les 2 classes (Churn en bleu, NoChurn en rouge) et l'épaisseur des traits le nombre d'exemple classifiés par la branche concernée.
+
+> Donner la séquence de questions permettant de classifier 75% des NoChurn.
 
