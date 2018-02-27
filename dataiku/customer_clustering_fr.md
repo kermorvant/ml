@@ -41,7 +41,7 @@ La base Telecom contient la description de 3333 clients d'une société de tél�
 
 > * Cliquer sur "+ Import your first dataset"
 > * Choisir "Files/upload your files"
-> * Glisser/déposer le fichier [telco_customers.xlsx]()
+> * Glisser/déposer le fichier [telco_customers.xlsx](../data/telco_customers.xlsx)
 
 Vous devez avoir un message vous indiquant que le format est "excel" et que 23 colonnes ont été détectée. Vous pouvez vérifier les données avec "Preview". Si tout semble OK, cliquer sur "Create"  en haut à droite.
 
