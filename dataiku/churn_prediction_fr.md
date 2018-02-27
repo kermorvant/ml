@@ -1,5 +1,5 @@
 # Prédiction de l'attrition
-Dans ce cas pratique, nous allons entrainer un modèle supervisé pour prédire si un client est susceptible de résilier son abonnement. Cela permettrait de définir des actions marketing afin de retenir ces clients.
+Dans ce cas pratique, nous allons entrainer un modèle supervisé pour prédire si un client est susceptible de résilier son abonnement (*churn prediction*). Cela permettra de définir des actions marketing afin de retenir ces clients.
 
 Le dataset utilisé sera `telco_customers_scored`. 
 
@@ -62,5 +62,75 @@ Dans le cas de la détection de Churn, nous voulons concentrer notre action sur 
 
 Les courbes lift donnent le gain par rapport à l'aléatoire par décile : sur notre exemple, sur les 10% des Churn les plus probables, notre modèle prédit 3.88 fois mieux que l'aléatoire, ce qui est un bon score. Nous pourrions donc concentrer les campagnes marketing sur ces clients.
 
+Il est aussi possible d'analyser le modèle lui-même, par exemple dans quelle mesure il est capable de séparer les deux classes Churn/NoChurn. 
+
+> Cliquer sur *PERFORMANCE / Density chart*
+
+<p align="center">
+  <img src="images/churn_density.png" width="600" >
+</p>
+
+Nous voyons la distribution des exemples selon le score prédit. Pour la classe 1, le score doit être proche de 1 alors que pour la classe 0, le score doit être proche de 0. Dans l'idéal, les deux classes sont bien séparées et on peut déterminer un seuil de décision. Dans notre cas, les deux distributions se recouvrent beaucoup mais on peut mettre un seuil pour ne détecter que des Churn.
+
+Enfin, nous pouvons analyser l'apport de chaque variable dans la décision du modèle :
+
+
+> Cliquer sur *INTERPRETATION / Regression coefficients*
+
+<p align="center">
+  <img src="images/regression_coeff.png" width="600" >
+</p>
+
+
+Nous voyons ici que la variable la plus importante est `Intl_Plan is no`, qui vote pour la classe NoChurn puis la variable `cluster_labels is dépensier` qui votre pour la classe Churn.
+
+## Optimisation des modèles de prédiction
+
+Dans cette section, nous allons recherche le meilleur modèle pour la prédiction du Churn.
+
+> * Visuliser le dataset `telco_customers_scored`
+> * Cliquer sur *LAB*, *Visual Analysis* puis *QUICK MODEL* et *Prediction*
+> * Choisir la variable à prédire : *Churn* puis *Performance* puis *Create*
+> * Une fois l'expérience créee, aller dans *DESIGN* puis *Algorithms*
+
+<p align="center">
+  <img src="images/churn_randomforest_param.png" width="600" >
+</p>
+
+Pour cette expérience, deux modèles ont été sélectionés : RandomForest et XGBoost. Ces sont actuellement les modèles qui donnent le plus souvent les meilleures performances. Ceoendant, dans le cas où les données d'apprentissage sont disponibles en très grandes quantité, des réseaux de neurones profonds (*DeepLearning*) peuvent alors donner de meilleurs résultats.
+
+Pour trouver le meilleur algorithme, il faut tester plusieurs valeurs pour les paramètres. Dans notre cas, pour le modèle de RandomForest, on va tester plusieurs valeurs pour *Maximum depth of tree* et pour *Minimum samples per leaf* et idem pour le modème XGBoost. Cela implique dont l'apprentissage et l'évaluation d'un grand nombre de modèles. 
+
+> * Lancer l'entrainement avec le bouton vert *TRAIN*
+
+Un message indique que  338 modèles vont être entraînés et évalués. Le meilleur modèle est un modèle de random Forest avec une *accuracy* de 97%.
+
+> * Cliquer sur le modèle pour l'explorer
+> * Sélectionner *PERFORMANCE / Confusion matrix* 
+
+La matrice de confusion est bien meilleure que pour le modèle linéaire.
+
+> * Sur les 666 exemples de tests, combien d'exemples ne sont pas correctement classifiés ? Retrouvez-vous l'*accuracy* de 97% ?
+
+Examinons la courbe de lift 
+
+> * Sélectionner *PERFORMANCE / Lift charts*
+> * Quelle est la valeur de la lift pour le premier décile ?
+
+Examinons la distribution des scores : 
+
+> * Sélectionner sur *PERFORMANCE / Density chart* ; 
+> * Notez que les distributions sont mieux séparées que pour le modèle linéaire.
+
+
+Examinons les variables les plus importantes : 
+
+> * Sélectionner sur *INTERPRETATION / Variables importance* ; 
+
+<p align="center">
+  <img src="images/churn_randomforest_variables.png" width="600" >
+</p>
+
+Un modèle RandomForest est composé de nombreux arbres de décision participant à la décision finale par un vote pondéré. Il n'est donc pas aisé d'examiner chacun des arbres. Par contre, il est possible de visualiser quelles sont les variables les plus utilisées et les plus importantes pour l'ensemble des arbres. Dans notre cas, la variable la plus importante est `Total_Charge`, suivie de `CustServ_Calls`. 
 
 
