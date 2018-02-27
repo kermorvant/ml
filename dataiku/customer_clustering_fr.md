@@ -2,13 +2,12 @@
 
 La segmentation de clientèle est un cas d'usage des algorithmes de partitionnement ou  *clustering*  en anglais. 
 
-> Attention, en français dans la communauté d'analyse de données, on parle aussi d'algorithmes de classification pour le partitionnement, donc non supervisé, alors que dans la communauté de l'apprentissage automatique (Machine Learning), on réserve le terme de classification pour la classification supervisée.
-> 
-> 
->  Type  | Apprentissage automatique | Analyse de données 
-> ---|--------|-------
-> non supervisé | clustering/partitionnement | classification
-> supervisé | classification | classement 
+ **Attention**, en français dans la communauté d'analyse de données, on parle aussi d'algorithmes de classification pour le partitionnement, donc non supervisé, alors que dans la communauté de l'apprentissage automatique (Machine Learning), on réserve le terme de classification pour la classification supervisée.
+ 
+  Type  | Apprentissage automatique | Analyse de données 
+ ---|--------|-------
+ non supervisé | clustering/partitionnement | classification
+ supervisé | classification | classement 
 
 
 ## Partitionnement d'une base de client Telecom
@@ -34,15 +33,15 @@ La base Telecom contient la description de 3333 clients d'une société de tél�
 
 ### Chargement du Dataset
 
-* Créer un nouveau projet "telco churn" en cliquant sur le "+"
+> * Créer un nouveau projet "telco churn" en cliquant sur le "+"
 
 <p align="center">
   <img src="images/create_project.png" width="600" >
 </p>
 
-* Cliquer sur "+ Import your first dataset"
-* Choisir "Files/upload your files"
-* Glisser/déposer le fichier "telco_customers.xlsx"
+> * Cliquer sur "+ Import your first dataset"
+> * Choisir "Files/upload your files"
+> * Glisser/déposer le fichier "telco_customers.xlsx"
 
 Vous devez avoir un message vous indiquant que le format est "excel" et que 23 colonnes ont été détectée. Vous pouvez vérifier les données avec "Preview". Si tout semble OK, cliquer sur "Create"  en haut à droite.
 
@@ -60,13 +59,13 @@ La dernière colonne "Churn" contient une variable indicatrice d'un client ayant
 
 ### Clustering des données
 
-* cliquer sur "Lab" (bouton bleu en haut à droite), puis *Quick model* et *Clustering*
+> * cliquer sur "Lab" (bouton bleu en haut à droite), puis *Quick model* et *Clustering*
 
 <p align="center">
   <img src="images/click_lab.png" width="600" >
 </p>
 
-* Vérifier que *K-Means* est sélectionné et cliquer sur *Create*
+> * Vérifier que *K-Means* est sélectionné et cliquer sur *Create*
 
 #### Sélection des paramètres du clustering
 
@@ -80,7 +79,7 @@ Afin d'appliquer l'algorithme de clutering, il faut choisir :
 
 Certaines caractéristiques ne sont pas pertinantes pour regrouper les clients, il est possible de les desactiver : 
 
-* Choisir *DESIGN* puis *Features handling* et desactiver *State, Area code, Phone* et *Churn*
+> * Choisir *DESIGN* puis *Features handling* et desactiver *State, Area code, Phone* et *Churn*
 
 **Sélection de l'algorithme**
 
@@ -132,5 +131,32 @@ On voit sur cet exemple que le cluster0 a une distribution inférieure à la moy
 </p>
 
 > * Observer que la valeur du coefficient de silhouette ne varie pas beaucoup et ne permet pas réellement de choisir le nombre de cluster optimal
-> * Choisir KMeans (k=6) et identifier le contenu des différents clusters en utilisant la *heatmap*
+> * Choisir *KMeans (k=6)* et identifier le contenu des différents clusters en utilisant la *heatmap*
 
+Une fois le modèle choisi (k=6), il faut ajouter le modèle de clustering au processus de traitement (*Flow*)
+
+> * Sélectionner le modèle *KMeans (k=6)* et cliquer sur *DEPLOY* (bouton en haut à gauche) puis choisir *Deploy a retrainable model to flow* pour ajouter le modèle actuel avec les noms de clusters au processus de traitement
+
+Nous allons maintenant appliquer le clustering à un nouveau dataset. 
+
+> * Télécharger [`unlabeled_customers_prepared.xlsx`](../data/unlabeled_customers_prepared.xlsx) et l'ajouter comme *dataset*
+> * Vislualizer le dataset puis choisir *ACTION* puis *Other recipes* puis *Cluster*
+> * Dans la fenêtre de dialogue, choisir *Clustering (KMEANS)* pour *Clustering Model*, terminer par *Create recipe*
+> Revenir à la visualisation du *Flow*, sélectionner le *Scoring recipe*  et cliquer sur Run (choisir l'otion *Non recursive*)
+
+<p align="center">
+  <img src="images/apply_clustering.png" width="600" >
+</p>
+
+> Visualiser le dataset *unlabeled\_customers\_prepared_scored* et noter la présence d'une nouvelle colonne : *cluster_labels* avec pour chaque client le type défini lors de l'analyse du cluster.
+
+Dans le cas du clustering, il n'est pas possible de savoir si le type associé à chaque client est correct ou non car nous n'avons pas la **vérité terrain** (ground-truth). Il est par contre possible de vérifier que la segmentation permet de cibler des clients plus susceptibles de résilier leur abonnement.
+
+> * Visualiser le dataset *telco\_customers_scored* et lui appliquer le clustering (bouton *ACTION*  puis suivre la même procédure que pour le dataset *unlabeled\_customers_prepared*)
+> * Visulaiser le dataset issu du clustering *telco\_customers_scored* et cliquer sur *Charts*
+> * Choisir le type *Stacked Bar*,  *Count of records* pour l'ordonnée (Y) et *Churn*  et *Cluster Label* pour l'abcsisse (X)
+
+<p align="center">
+  <img src="images/stacked_bar.png" width="600" >
+</p>
+> * Analyser l'histogramme : quelle cluster est sur-représenté pour le Churn ?
