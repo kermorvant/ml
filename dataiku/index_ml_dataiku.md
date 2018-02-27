@@ -4,3 +4,4 @@ These practical examples provide an introduction to Machine Learning using Datai
 
 * [Customer segmentation using clustering algorithms](customer_clustering_fr.html) (in French)
 * [Churn prediction](churn_prediction_fr.html) (in French)
+*  [Prediction of the customer value](customer_value_fr.html) (in French)
