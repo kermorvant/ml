@@ -16,10 +16,10 @@ La segmentation de clientèle est un cas d'usage des algorithmes de partitionnem
 La base Telecom contient la description de 3333 clients d'une société de télécom fictive. C'est base n'est pas réelle mais reprends des caractéristiques de clients réalistes : 
 
 * State : état d'origine du client (US)
-* Area_Code : indicatof téléphonique
+* Area_Code : indicatif téléphonique
 * Phone : numéro de téléphone	
 * Account_Length	: 
-* Intl_Plan : option appels internationau
+* Intl_Plan : option appels internationaux
 * VMail_Plan	: option messagerie
 * VMail_Message	: nombre de messages en messagerie
 * Day_Mins ; Day_Calls ; Day_Charge : nombre de minutes/nombres d'appels/montant des appels en journée
@@ -34,7 +34,7 @@ La base Telecom contient la description de 3333 clients d'une société de tél�
 
 ### Chargement du Dataset
 
-* Créer un nouveau projet "orange churn" en cliquant sur le "+"
+* Créer un nouveau projet "telco churn" en cliquant sur le "+"
 
 <p align="center">
   <img src="images/create_project.png" width="600" >
@@ -73,7 +73,7 @@ La dernière colonne "Churn" contient une variable indicatrice d'un client ayant
 Afin d'appliquer l'algorithme de clutering, il faut choisir : 
 
 * Quelles caractéristiques (*features*) sont utilisées pour décrire les individus ?
-* Quel algorithme de clustering choisir ?
+* Quel algorithme de clustering utiliser ?
 * Combien de clusters sont attendus ?
 
 **Sélection des caractéristiques**
