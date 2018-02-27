@@ -17,7 +17,7 @@ La base Telecom contient la description de 3333 clients d'une société de tél�
 * State : état d'origine du client (US)
 * Area_Code : indicatif téléphonique
 * Phone : numéro de téléphone	
-* Account_Length	: 
+* Account_Length	: ??
 * Intl_Plan : option appels internationaux
 * VMail_Plan	: option messagerie
 * VMail_Message	: nombre de messages en messagerie
@@ -41,7 +41,7 @@ La base Telecom contient la description de 3333 clients d'une société de tél�
 
 > * Cliquer sur "+ Import your first dataset"
 > * Choisir "Files/upload your files"
-> * Glisser/déposer le fichier "telco_customers.xlsx"
+> * Glisser/déposer le fichier [telco_customers.xlsx]()
 
 Vous devez avoir un message vous indiquant que le format est "excel" et que 23 colonnes ont été détectée. Vous pouvez vérifier les données avec "Preview". Si tout semble OK, cliquer sur "Create"  en haut à droite.
 
@@ -140,7 +140,7 @@ Une fois le modèle choisi (k=6), il faut ajouter le modèle de clustering au pr
 Nous allons maintenant appliquer le clustering à un nouveau dataset. 
 
 > * Télécharger [`unlabeled_customers_prepared.xlsx`](../data/unlabeled_customers_prepared.xlsx) et l'ajouter comme *dataset*
-> * Vislualizer le dataset puis choisir *ACTION* puis *Other recipes* puis *Cluster*
+> * Visualiser le dataset puis choisir *ACTION* puis *Other recipes* puis *Cluster*
 > * Dans la fenêtre de dialogue, choisir *Clustering (KMEANS)* pour *Clustering Model*, terminer par *Create recipe*
 > Revenir à la visualisation du *Flow*, sélectionner le *Scoring recipe*  et cliquer sur Run (choisir l'otion *Non recursive*)
 
@@ -159,4 +159,4 @@ Dans le cas du clustering, il n'est pas possible de savoir si le type associé �
 <p align="center">
   <img src="images/stacked_bar.png" width="600" >
 </p>
-> * Analyser l'histogramme : quelle cluster est sur-représenté pour le Churn ?
+> * Analyser l'histogramme : quel cluster est sur-représenté pour le Churn ?

@@ -1,4 +1,4 @@
-# Prédiction d'un revenu client
+# Prédiction du revenu associé à un client
 
 Dans ce cas pratique, nous allons mettre au point un modèle permettant de prédire le revenu associé à un client. Pour ce faire, nous allons opérer des transformations sur les données brutes et associer des données venant de plusieurs bases :
 
@@ -12,7 +12,7 @@ Dans ce cas pratique, nous allons mettre au point un modèle permettant de préd
 
 >* Créer un nouveau projet *Customer_value*
 >* Télécharger la base `crm_last_year.csv` et l'ajouter au projet (Dataset / New Dataset / Upload your file puis glisser/déposer le fichier CSV).
->* Sélectioner le dataset "crm\_last_year" puis dans le menu *ACTION* sélectionner  *Visual Recipes / Prepare*.
+>* Sélectionner le dataset "crm\_last_year" puis dans le menu *ACTION* sélectionner  *Visual Recipes / Prepare*.
 
 Cette action créer un nouveau dataset sur lequel nous allons appliquer des transformations. Pour ajouter une nouvelle étape de préparation, cliquer sur *+ ADD A NEW STEP* et rechercher la transformation avec le champ de recherche.
 
@@ -41,7 +41,7 @@ Nous allons maintenant fusionner la base CRM et la base WEB en prenant comme piv
 >  * *columns to retrieve* : ip, page_visited, campaign
 >  * *Prefix* = join\_
 
-Cette étape ajoute 3 colonnes à l abse de client avec les données venant de la base Web. Nous allons maintenant géolocaliser les clients.
+Cette étape ajoute 3 colonnes à la base de client avec les données venant de la base Web. Nous allons maintenant géolocaliser les clients.
 
 >* Ajouter une étape *Geo-locate IP* avec les paramètres *IP column* = join_ip et *prefix* = geo\_ . Cocher uniquement *Extract country* car seule cette information nous intéresse.
 
@@ -60,7 +60,7 @@ Cette étape ajoute une colonne *geo_country*. Nous allons maintenant utiliser c
 
 Ces traitements créent un nouveau dataset `crm_last_year_prepared` sur lequel nous allons entrainer notre modèle de prédiction de revenus.
 
-## Entrainement du modèle de préduction de revenu
+## Entrainement du modèle de prédiction de revenu
 
 L'objectif est de prédire le revenu associé à un nouveau client étant données les diverses informations collectées dans les bases CRM, WEB et GDP. Comme la variable à prédire est une une variable quantitative (le revenu en euro), la tâche est supervisée et de type régression.
 
