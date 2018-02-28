@@ -43,9 +43,9 @@ La base Telecom contient la description de 3333 clients d'une société de tél�
 > * Choisir "Files/upload your files"
 > * Glisser/déposer le fichier [telco_customers.xlsx](../data/telco_customers.xlsx)
 
-Vous devez avoir un message vous indiquant que le format est "excel" et que 23 colonnes ont été détectée. Vous pouvez vérifier les données avec "Preview". Si tout semble OK, cliquer sur "Create"  en haut à droite.
+Vous devez avoir un message vous indiquant que le format est "excel" et que 23 colonnes ont été détectées. Vous pouvez vérifier les données avec "Preview". Si tout semble correct, cliquer sur "Create"  en haut à droite.
 
-Les colonnes sont analysées et le type est détecté : US state, integer, text, decimal, boolean.	
+Les colonnes sont analysées et le type est détecté : *US state, integer, text, decimal, boolean*.	
 
 <p align="center">
   <img src="images/column_detected.png" width="600" >
@@ -69,7 +69,7 @@ La dernière colonne "Churn" contient une variable indicatrice d'un client ayant
 
 #### Sélection des paramètres du clustering
 
-Afin d'appliquer l'algorithme de clutering, il faut choisir : 
+Afin d'appliquer l'algorithme de clustering, il faut choisir : 
 
 * Quelles caractéristiques (*features*) sont utilisées pour décrire les individus ?
 * Quel algorithme de clustering utiliser ?
@@ -77,19 +77,19 @@ Afin d'appliquer l'algorithme de clutering, il faut choisir :
 
 **Sélection des caractéristiques**
 
-Certaines caractéristiques ne sont pas pertinantes pour regrouper les clients, il est possible de les desactiver : 
+Certaines caractéristiques ne sont pas pertinentes pour regrouper les clients, il est possible de les désactiver : 
 
-> * Choisir *DESIGN* puis *Features handling* et desactiver *State, Area code, Phone* et *Churn*
+> * Choisir *DESIGN* puis *Features handling* et désactiver *State, Area code, Phone* et *Churn*
 
 **Sélection de l'algorithme**
 
 En première approche, nous allons utiliser l'algorithme  le plus courant : *KMeans*. 
 
-> Sélectionner l'algorithme KMean et desactiver les autres algorithmes
+> Sélectionner l'algorithme *KMeans* et désactiver les autres algorithmes
 
 **Sélection du nombre de clusters**
 
-En général, on ne connait pas à l'avance le nombre de clusters dans les données. Il faut donc tester plusieurs valeur et évaluer chaque resultat. Cette procédure étant assez fastidieuse, il ne faut pas choisir un nombre de cluster trop important. 
+En général, on ne connait pas à l'avance le nombre de clusters dans les données. Il faut donc tester plusieurs valeurs et évaluer chaque résultat. Cette procédure étant assez fastidieuse, il ne faut pas choisir un nombre de cluster trop important. 
 
 > Indiquer 3 pour la valeur *Number of clusters*, puis cliquer sur *Train* (bouton vert en haut à droite). Une fois le clustering terminé (cela prend quelques secondes), cliquer que le résultat *KMeans (k=3)*
 
@@ -99,13 +99,13 @@ En général, on ne connait pas à l'avance le nombre de clusters dans les donn�
 
 #### Analyse des clusters
 
-L'analyse de la qualité des clusters ne peut pas être totalement automatisée. S'il existe des métriques de qualités de cluster (par exemple le coefficient [Silhouette](http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html) ), il faut explorer manuellement les clusters pour évaluer si les paramètres et en particulier si le nombre de clusters choisi sont adaptés aux données.
+L'analyse de la qualité des clusters ne peut pas être totalement automatisée. S'il existe des métriques de qualités de cluster (par exemple le coefficient [Silhouette](http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html) ), il faut explorer manuellement les clusters pour évaluer si les paramètresn et en particulier si le nombre de clusters choisi, sont adaptés aux données.
 
-* Afin d'analyse les cluster, nous allons utiliser une représentation en *heatmap*. 
+* Afin d'analyser les cluster, nous allons utiliser une représentation en *heatmap*. 
 
 > Après avoir cliqué sur *KMeans (k=3)*, sélectionner *heatmap*  dans la section Clusters.
 
-La *heatmap*  indique pour chaque cluster les caractéristiques des éléments du cluster pour cette variable : le bleu indique une moyenne des éléments du cluster inférieure à la moyenne générale, le rouge une moyenne des éléments du cluster supérieure à la moyenne générale. On peut donc interprêter les clusters : 
+La *heatmap*  indique pour chaque cluster les caractéristiques des éléments du cluster pour cette variable : le bleu indique une moyenne des éléments du cluster inférieure à la moyenne générale, le rouge une moyenne des éléments du cluster supérieure à la moyenne générale. On peut donc interpréter les clusters : 
 
 Sur l'illustration ci-dessous 
 * le cluster 0 regroupe les clients effectuant peu d'appels
@@ -131,11 +131,12 @@ On voit sur cet exemple que le cluster0 a une distribution inférieure à la moy
 </p>
 
 > * Observer que la valeur du coefficient de silhouette ne varie pas beaucoup et ne permet pas réellement de choisir le nombre de cluster optimal
-> * Choisir *KMeans (k=6)* et identifier le contenu des différents clusters en utilisant la *heatmap*
+> * Choisir *KMeans (k=6)* et identifier le contenu des différents clusters en utilisant la *heatmap*.
+> * Renommer les cluster avec un identifiant correspondant à leur contenu, par exemples *clients_économes*, *clients_internationaux*, etc.
 
 Une fois le modèle choisi (k=6), il faut ajouter le modèle de clustering au processus de traitement (*Flow*)
 
-> * Sélectionner le modèle *KMeans (k=6)* et cliquer sur *DEPLOY* (bouton en haut à gauche) puis choisir *Deploy a retrainable model to flow* pour ajouter le modèle actuel avec les noms de clusters au processus de traitement
+> * Sélectionner le modèle *KMeans (k=6)* et cliquer sur *DEPLOY* (bouton en haut à gauche) puis choisir *Deploy a retrainable model to flow* pour ajouter le modèle actuel, avec les noms de clusters, au processus de traitement
 
 Nous allons maintenant appliquer le clustering à un nouveau dataset. 
 
@@ -153,7 +154,7 @@ Nous allons maintenant appliquer le clustering à un nouveau dataset.
 Dans le cas du clustering, il n'est pas possible de savoir si le type associé à chaque client est correct ou non car nous n'avons pas la **vérité terrain** (ground-truth). Il est par contre possible de vérifier que la segmentation permet de cibler des clients plus susceptibles de résilier leur abonnement.
 
 > * Visualiser le dataset *telco\_customers_scored* et lui appliquer le clustering (bouton *ACTION*  puis suivre la même procédure que pour le dataset *unlabeled\_customers_prepared*)
-> * Visulaiser le dataset issu du clustering *telco\_customers_scored* et cliquer sur *Charts*
+> * Visuliser le dataset issu du clustering *telco\_customers_scored* et cliquer sur *Charts*
 > * Choisir le type *Stacked Bar*,  *Count of records* pour l'ordonnée (Y) et *Churn*  et *Cluster Label* pour l'abcsisse (X)
 
 <p align="center">

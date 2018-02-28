@@ -8,15 +8,15 @@ Le dataset utilisé sera `telco_customers_scored`.
 
 ## Prédiction avec un modèle linéaire
 
-Le premier modèle de prédiction étudié est un modèle linéaire. Ce modèle suppose que le churn peut être prédit par une combinaison linéaire des variables explicatives (features). Bien que simpliste, ce modèle donne souvent de bons résultats et consitue généralement un modèle de référence (*baseline*). Il n'est pas adapté quand 
+Le premier modèle de prédiction étudié est un modèle linéaire. Ce modèle suppose que le churn peut être prédit par une combinaison linéaire des variables explicatives (*features*). Bien que simpliste, ce modèle donne souvent de bons résultats et constitue généralement un modèle de référence (*baseline*). Il n'est pas adapté quand :
 
 * la variable a prédire dépend de combinaison non linéaire des features; 
 * les variables explicatives sont corrélées;
-* le nombre de variables explicative est très grand ; il faut alors sélectionner les variables.
+* le nombre de variables explicatives est très grand ; il faut alors sélectionner les variables.
 
-> * Pour notre cas de prédiction de *Churn*, le modèle vous semble-t-il adapté ?
+> * Pour notre cas de prédiction de *Churn*, le modèle vous semble-t-il adapté ? Pourquoi ?
 
-Même si le modèle n'est pas adapté, nous allons réaliser un entrainement pour voir les différents paramètres sur un modèle simple : 
+Même si le modèle n'est pas adapté, nous allons réaliser un entrainement pour étudier les différents paramètres d'un entrainement sur un modèle simple : 
 
 > * Visuliser le dataset `telco_customers_scored`
 > * Cliquer sur *LAB*, *Visual Analysis* puis *QUICK MODEL* et *Prediction*
@@ -28,7 +28,7 @@ Une fois le modèle créé, aller dans *DESIGN* puis *Target*. Nous voyons une a
   <img src="images/churn_target.png" width="600" >
 </p> 
 
-Nous avons un problème avec des classes déballancée : il y a beaucoup moins de Churn que de NoChurn. Mais c'est la prédiction de Churn qui nous intéresse, il faudra donc se focaliser sur la classe minoritaire.
+Nous avons un problème avec des classes déballancées : il y a beaucoup moins de Churn que de NoChurn. Mais c'est la prédiction de Churn qui nous intéresse, il faudra donc se focaliser sur la classe minoritaire.
 
 Dans la section *Train / Test Set*, nous voyons les paramètres de découpage des données. Pour estimer la qualité du modèle, il faut utiliser un ensemble différent de l'ensemble d'entrainement. C'est le *test set*
 
@@ -36,9 +36,9 @@ Dans la section *Train / Test Set*, nous voyons les paramètres de découpage de
   <img src="images/train_test.png" width="600" >
 </p>
 
-Dans notre cas, 80% des données sont utilisées pour l'entrainement et 20% pour l'esimtation de la qualité du modèle.
+Dans notre cas, 80% des données sont utilisées pour l'entrainement et 20% pour l'estimation de la qualité du modèle.
 
-Dans la section *Features handling*, nous voyons que certaines variables n'ont pas été sélectionnées : par exemple *State* a été désactivée car cette variable semblait avoir trop de modalités (*DSS rejected this feature because it had too many categories for the task at hand*)
+Dans la section *Features handling*, nous voyons que certaines variables n'ont pas été sélectionnées : par exemple *State* a été désactivée car cette variable semblait avoir trop de modalités (*DSS rejected this feature because it had too many categories for the task at hand*).
 
 Dans la section *Algorithms*, un seul algorithme a été sélectionné, *Lasso Path*. Lancer l'entrainement du modèle avec le bouton vert *TRAIN*. Une fois le modèle entrainé, Cliquer dessus pour voir les résultats. L'accuracy du modèle doit être à 0.85, ce qui signifie que le modèle fait 15% d'erreur lors de la prédiction Churn/NoChurn sur de nouvelles données. Cependant, il faut regarder plus en détail car seul la préduction du Churn nous intéresse.
 
