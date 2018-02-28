@@ -50,17 +50,17 @@ Cette page présente une analyse détaillée des performances et en particulier 
   <img src="images/churn_confusion_matrix.png" width="600" >
 </p>
 
-Cette matrice nous indique que sur 666 exemples de test, 502 exemples qui n'était pas en Churn ont été correctement classifiés, ainsi que 64 exemples qui étaient en Churn. 77 exemples ont été prédits à tord comme en Churn (faux positifs) et 23 exemples n'ont pas été prédit en Churn alors qu'ils auraient dû l'être (faux négatifs). On voit donc que notre modèle prédit 64 Churn sur les 87 à détecter ce qui est bien, mais avec une proportion de faux positifs assez élevée (77, plus quel es 64 vrais positif). Pour être certain de bien détecter le Churn, notre modèles en prédits plus que la réalité.
+Cette matrice nous indique que sur 666 exemples de test, 502 exemples qui n'était pas en Churn ont été correctement classifiés, ainsi que 64 exemples qui étaient en Churn. 77 exemples ont été prédits à tord comme en Churn (faux positifs) et 23 exemples n'ont pas été prédit en Churn alors qu'ils auraient dû l'être (faux négatifs). On voit donc que notre modèle prédit 64 Churn sur les 87 à détecter ce qui est bien, mais avec une proportion de faux positifs assez élevée (77, plus quel es 64 vrais positif). Pour être certain de bien détecter le Churn, notre modèles en prédit plus que la réalité.
 
 > Cliquer sur *PERFORMANCE / Lift charts*
 
-Dans le cas de la détection de Churn, nous voulons concentrer notre action sur les clients les plus susceptibles de résillier notre abonnement et cibler les dépenses markeing sur ces clients. Sans modèle de prédiction, les clients cibles seraient tirés au hasard dans la base client. Le modèle de référence est donc un modèle aléatoire (*random model*). Avec notre modèle de prédiction, nous voulons savoir si nous pouvons prédire mieux que l'aléatoire les clients à cibler. Cette mesure est donnée par la courbe lift.
+Dans le cas de la détection de Churn, nous voulons concentrer notre action sur les clients les plus susceptibles de résilier notre abonnement et cibler les dépenses marketing sur ces clients. Sans modèle de prédiction, les clients cibles seraient tirés au hasard dans la base client. Le modèle de référence est donc un modèle aléatoire (*random model*). Avec notre modèle de prédiction, nous voulons savoir si nous pouvons prédire mieux que l'aléatoire les clients à cibler. Cette mesure est donnée par la courbe lift.
 
 <p align="center">
   <img src="images/churn_lift.png" width="600" >
 </p>
 
-Les courbes lift donnent le gain par rapport à l'aléatoire par décile : sur notre exemple, sur les 10% des Churn les plus probables, notre modèle prédit 3.88 fois mieux que l'aléatoire, ce qui est un bon score. Nous pourrions donc concentrer les campagnes marketing sur ces clients.
+Une courbe lift donne le gain par rapport à l'aléatoire par décile : sur notre exemple, sur les 10% des Churn les plus probables, notre modèle prédit 3.88 fois mieux que l'aléatoire, ce qui est un bon score. Nous pourrions donc concentrer les campagnes marketing sur ces clients.
 
 Il est aussi possible d'analyser le modèle lui-même, par exemple dans quelle mesure il est capable de séparer les deux classes Churn/NoChurn. 
 
@@ -82,7 +82,7 @@ Enfin, nous pouvons analyser l'apport de chaque variable dans la décision du mo
 </p>
 
 
-Nous voyons ici que la variable la plus importante est `Intl_Plan is no`, qui vote pour la classe NoChurn puis la variable `cluster_labels is dépensier` qui votre pour la classe Churn.
+Nous voyons ici que la variable la plus importante est `Intl_Plan is no`, qui vote pour la classe NoChurn puis la variable `cluster_labels is dépensier` qui vote pour la classe Churn.
 
 ## Optimisation des modèles de prédiction
 
@@ -97,13 +97,13 @@ Dans cette section, nous allons recherche le meilleur modèle pour la prédictio
   <img src="images/churn_randomforest_param.png" width="600" >
 </p>
 
-Pour cette expérience, deux modèles ont été sélectionés : RandomForest et XGBoost. Ces sont actuellement les modèles qui donnent le plus souvent les meilleures performances. Ceoendant, dans le cas où les données d'apprentissage sont disponibles en très grandes quantité, des réseaux de neurones profonds (*DeepLearning*) peuvent alors donner de meilleurs résultats.
+Pour cette expérience, deux modèles ont été sélectionnés : RandomForest et XGBoost. Ces sont actuellement les modèles qui donnent le plus souvent les meilleures performances. Cependant, dans le cas où les données d'apprentissage sont disponibles en très grandes quantité, des réseaux de neurones profonds (*DeepLearning*) peuvent alors donner de meilleurs résultats.
 
-Pour trouver le meilleur algorithme, il faut tester plusieurs valeurs pour les paramètres. Dans notre cas, pour le modèle de RandomForest, on va tester plusieurs valeurs pour *Maximum depth of tree* et pour *Minimum samples per leaf* et idem pour le modème XGBoost. Cela implique dont l'apprentissage et l'évaluation d'un grand nombre de modèles. 
+Pour trouver le meilleur algorithme, il faut tester plusieurs valeurs pour les paramètres. Dans notre cas, pour le modèle de RandomForest, on va tester plusieurs valeurs pour *Maximum depth of tree* et pour *Minimum samples per leaf* et idem pour le modèle XGBoost. Cela implique dont l'apprentissage et l'évaluation d'un grand nombre de modèles. 
 
 > * Lancer l'entrainement avec le bouton vert *TRAIN*
 
-Un message indique que  338 modèles vont être entraînés et évalués. Le meilleur modèle est un modèle de random Forest avec une *accuracy* de 97%.
+Un message indique que  338 modèles vont être entraînés et évalués. Le meilleur modèle est un modèle de *random forest* avec un taux de classification correcte (*accuracy*) de 97%.
 
 > * Cliquer sur le modèle pour l'explorer
 > * Sélectionner *PERFORMANCE / Confusion matrix* 
@@ -137,7 +137,7 @@ Un modèle RandomForest est composé de nombreux arbres de décision participant
 
 Même s'ils ne sont pas les modèles les plus performants, les arbres de décisions ont l'avantage d'être interprêtables.
 
-> * Visuliser le dataset `telco_customers_scored`
+> * Visualiser le dataset `telco_customers_scored`
 > * Cliquer sur *LAB*, *Visual Analysis* puis *QUICK MODEL* et *Prediction*
 > * Choisir la variable à prédire : *Churn* puis *Decision Tree* puis *Create* et *TRAIN*
 
