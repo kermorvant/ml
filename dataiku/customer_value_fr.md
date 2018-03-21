@@ -43,7 +43,7 @@ Nous allons maintenant fusionner la base CRM et la base WEB en prenant comme piv
 
 Cette étape ajoute 3 colonnes à la base de client avec les données venant de la base Web. Nous allons maintenant géolocaliser les clients.
 
->* Ajouter une étape *Geo-locate IP* avec les paramètres *IP column* = join_ip et *prefix* = geo\_ . Cocher uniquement *Extract country* car seule cette information nous intéresse.
+>* Ajouter une étape *Resolve GeoIP*  avec les paramètres *IP column* = join_ip et *prefix* = geo\_ . Cocher uniquement *Extract country* car seule cette information nous intéresse.
 
 Cette étape ajoute une colonne *geo_country*. Nous allons maintenant utiliser cette nouvelle colonne pour ajouter une donnée générique liée au pays du client,  le PIB par habitant.
 

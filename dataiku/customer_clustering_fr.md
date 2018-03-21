@@ -140,7 +140,7 @@ Une fois le modèle choisi (k=6), il faut ajouter le modèle de clustering au pr
 
 Nous allons maintenant appliquer le clustering à un nouveau dataset. 
 
-> * Télécharger [`unlabeled_customers_prepared.xlsx`](../data/unlabeled_customers_prepared.xlsx) et l'ajouter comme *dataset*
+> * Télécharger [unlabeled_customers_prepared.xlsx](../data/unlabeled_customers_prepared.xlsx) et l'ajouter comme *dataset*
 > * Visualiser le dataset puis choisir *ACTION* puis *Other recipes* puis *Cluster*
 > * Dans la fenêtre de dialogue, choisir *Clustering (KMEANS)* pour *Clustering Model*, terminer par *Create recipe*
 > Revenir à la visualisation du *Flow*, sélectionner le *Scoring recipe*  et cliquer sur Run (choisir l'otion *Non recursive*)
