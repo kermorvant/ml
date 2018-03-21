@@ -18,7 +18,7 @@ Une fois le fichier téléchargé, cliquer sur "PREVIEW", sélectionner l'option
 
 Une fois le dataset créé, changer le type de la dernière colonne (class) de "Interger" en "Text".
 
-## Entrainement d'un classifieur par plus proches voisins
+## Entrainement des classifieurs 
 
 Dans le dataset "MNIST_all_features", cliquer sur "LAB" puis, "Quick model", "Prediction" puis sélectionner la variable target "Class" et "Simple formula".
 
@@ -48,6 +48,9 @@ Aller dans l'onglet "Confusion matrix".
 >* Quelles sont les classes les moins bien classifiées ? Avec quelles autres classes sont-elle confondues.
 
 Revenir au menu DESIGN et augmenter le nombre d'exemples à 60000 et tester des valeurs de k de 2 à 8. Relancer l'apprentissage. Noter l'augmentation du temps des expériences.
+
+>* Tester un classifieur par régression logistique (Logistic Regression) avec les paramètres par défaut
+>* Tester un classifieur SVM (Support Vector Machine) avec les paramètres par défaut
 
 
 
