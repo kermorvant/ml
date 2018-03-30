@@ -19,7 +19,7 @@ First, let's suppose that we have only 2 classes (`+` and `-`) and that the data
 Several separating lines are possible. Which one should we choose in order to minimize the error on the test set ? **The first idea** is to choose the line which is far from the points at the boundaries. 
 
 <p align="center">
-  <img src="images/separatrice_lineaire_avec_marges.png" width="300" >
+  <img src="../images/separatrice_lineaire_avec_marges.png" width="300" >
 </p>
 
 This give a criterion to choose the best separating line based only on the points near the boundaries. The points which are far from the boundaries, and unambiuous, are not participating to the selection of the decision line. The points on which the decision line is built are called *support vectors* (points in circle on the illustration).
@@ -27,7 +27,7 @@ This give a criterion to choose the best separating line based only on the point
 Second, let's suppose that the data are **not** linearly separable : 
 
 <p align="center">
-  <img src="images/separatrice_non_lineaire.png" width="300" >
+  <img src="../images/separatrice_non_lineaire.png" width="300" >
 </p>
 
 On the illustration, the 2 classes can not be separated using a strait line. **The second idea** is to change the representation space of the data so that the classes are linearly separable. This usually done by choosing a representation space of higher dimensionality. The change of representation space is known as the *kernel trick*.
