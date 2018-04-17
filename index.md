@@ -6,6 +6,6 @@
 
 ## Notebooks:
 
+* [Training and optimization of several classifiers (kNN, logisitic regression, SVM) on MNIST](notebooks/MNIST_all_stars_template.ipynb)
 * [Logistic regression seen as a neural network](notebooks/logistic_NN_template.ipynb)
 * [Convolution and pooling layers](notebooks/conv_nn_template.ipynb)
-* [Classifier optimization on MNIST](notebooks/MNIST_all_stars_template.ipynb)
