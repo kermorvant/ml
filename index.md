@@ -13,3 +13,8 @@
 ## Bibliography
 
 * [A crash course on python](biblio/2017-vl-ml-cha-python-crash-course.pdf)
+
+
+## Server : 
+
+* Jupyterhub : http://192.168.160.17:8000/
