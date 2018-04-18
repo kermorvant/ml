@@ -95,7 +95,7 @@ df = pd.DataFrame([
 
 > * Train a [Bernouilli Naive Bayes](http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.BernoulliNB.html) on all the data.
 > * Predict the class of the sample `[1,0,1]`, corresponding to the document of the previous question. 
-> * Check the different probabilities computer for the previous question :
+> * Check the different probabilities computed for the previous question :
 >  * `clf.feature_count_` :  the count for each feature per class $C(X_i =1 \| Y=c)$
 >  * `clf.feature_log_prob_` : the log probability for each feature per class $log(P(X_i =1 \| Y=c))$
 >  * `clf.class_log_prior_` : the log prior probabilities for each class $log(P(Y=c))$
