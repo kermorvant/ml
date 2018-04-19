@@ -5,9 +5,9 @@
 ## Notebooks:
 
 * [A simple exercise on k-Nearest Neighbors](notebooks/knn_exercise_template.ipynb) / Notebook with [answers](notebooks/knn_exercise.ipynb)
-* [Training and optimization of several classifiers (kNN, logisitic regression, SVM) on MNIST](notebooks/MNIST_all_stars_template.ipynb)
-* [A simple exercise on Naive Bayes and text classification on Le Monde](notebooks/naivebayes_exercise_template.ipynb)
-* [Salary prediction for Kaggle Data Scientists](notebooks/tree_kaggle_template.ipynb)
+* [Training and optimization of several classifiers (kNN, logisitic regression, SVM) on MNIST](notebooks/MNIST_all_stars_template.ipynb) / Notebook with [answers](notebooks/MNIST_all_stars.ipynb)
+* [A simple exercise on Naive Bayes and text classification on Le Monde](notebooks/naivebayes_exercise_template.ipynb)  Notebook with [answers](notebooks/naivebayes_exercise.ipynb)
+* [Salary prediction for Kaggle Data Scientists](notebooks/tree_kaggle_template.ipynb)  / Notebook with [answers](notebooks/tree_kaggle.ipynb) tree_kaggle.ipynb
 * [Logistic regression seen as a neural network](notebooks/logistic_NN_template.ipynb)
 * [Convolution and pooling layers](notebooks/conv_nn_template.ipynb)
 
