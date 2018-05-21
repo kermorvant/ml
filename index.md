@@ -10,6 +10,7 @@
 * [Salary prediction for Kaggle Data Scientists](notebooks/tree_kaggle_template.ipynb)  / Notebook with [answers](notebooks/tree_kaggle.ipynb) tree_kaggle.ipynb
 * [Logistic regression seen as a neural network](notebooks/logistic_NN_template.ipynb)
 * [Convolution and pooling layers](notebooks/conv_nn_template.ipynb)
+* [A simple RNN forward function](notebooks/RNN.ipynb)
 
 ## Bibliography
 
