@@ -1,6 +1,9 @@
 ---
 layout: python
 ---
+
+TODO : ajouter http://eli5.readthedocs.io/en/latest/tutorials/sklearn-text.html
+
 # Naive Bayes
 
 ## A simple example on a toy problem
