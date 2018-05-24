@@ -136,7 +136,7 @@ On voit sur cet exemple que le cluster0 a une distribution inférieure à la moy
 
 Une fois le modèle choisi (k=6), il faut ajouter le modèle de clustering au processus de traitement (*Flow*)
 
-> * Sélectionner le modèle *KMeans (k=6)* et cliquer sur *DEPLOY* (bouton en haut à gauche) puis choisir *Deploy a retrainable model to flow* pour ajouter le modèle actuel, avec les noms de clusters, au processus de traitement
+> * Cliquer sur le modèle *KMeans (k=6)* et cliquer sur *DEPLOY* (bouton en haut à droite) puis choisir *Deploy a retrainable model to flow* pour ajouter le modèle actuel, avec les noms de clusters, au processus de traitement
 
 Nous allons maintenant appliquer le clustering à un nouveau dataset. 
 
