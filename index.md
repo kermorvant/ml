@@ -1,5 +1,12 @@
 # Machine Learning
 
+## Lectures
+
+* slides : [https://nextcloud.teklia.com/index.php/s/DyrGQSQkS5PemER](https://nextcloud.teklia.com/index.php/s/DyrGQSQkS5PemER)
+
+
+## Machine learning without programming
+
 * An [introduction to Machine Learning without programming using Dataiku](dataiku/index_ml_dataiku.html), for non programmer, novice in Machine Learning (in French)
 
 ## Notebooks:
