@@ -21,4 +21,5 @@
 
 ## Bibliography
 
+* [Basic linear algebra for neural networks](biblio/0_LinearAlgebraforNN.pdf)
 * [A crash course on python](biblio/2017-vl-ml-cha-python-crash-course.pdf)
