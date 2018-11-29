@@ -99,7 +99,7 @@ En général, on ne connait pas à l'avance le nombre de clusters dans les donn�
 
 #### Analyse des clusters
 
-L'analyse de la qualité des clusters ne peut pas être totalement automatisée. S'il existe des métriques de qualités de cluster (par exemple le coefficient [Silhouette](http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html) ), il faut explorer manuellement les clusters pour évaluer si les paramètresn et en particulier si le nombre de clusters choisi, sont adaptés aux données.
+L'analyse de la qualité des clusters ne peut pas être totalement automatisée. S'il existe des métriques de qualités de cluster (par exemple le coefficient [Silhouette](http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html) ), il faut explorer manuellement les clusters pour évaluer si les paramètres et en particulier si le nombre de clusters choisi, sont adaptés aux données.
 
 * Afin d'analyser les cluster, nous allons utiliser une représentation en *heatmap*. 
 

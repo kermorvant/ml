@@ -28,7 +28,7 @@ Aller dans le menu DESIGN :
 *  dans "Features handling", réactiver toutes les features
 *  dans algorithme sélectionner kNN
 *  Tester des valeurs de k de 1 à 20
-*  Dans "Evaluation", choisir la métrique "Accuracy"
+*  Dans "Basic/Metrics", choisir la métrique "Accuracy"
 *  Cliquer sur TRAIN
 
 Une fois le modèle entrainé, cliquer sur le modèle et aller dans l'onglet "Grid-search optimization".
@@ -48,6 +48,8 @@ Aller dans l'onglet "Confusion matrix".
 >* Quelles sont les classes les moins bien classifiées ? Avec quelles autres classes sont-elle confondues.
 
 Revenir au menu DESIGN et augmenter le nombre d'exemples à 60000 et tester des valeurs de k de 2 à 8. Relancer l'apprentissage. Noter l'augmentation du temps des expériences.
+
+Réduire à 10 000 exemples : 
 
 >* Tester un classifieur par régression logistique (Logistic Regression) avec les paramètres par défaut
 >* Tester un classifieur SVM (Support Vector Machine) avec les paramètres par défaut
