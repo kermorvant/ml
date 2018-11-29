@@ -1,8 +1,8 @@
 # Machine Learning
 
-## Lectures
 
-* slides : [https://nextcloud.teklia.com/index.php/s/DyrGQSQkS5PemER](https://nextcloud.teklia.com/index.php/s/DyrGQSQkS5PemER)
+
+* [Key points](main_points.html)
 
 
 ## Machine learning without programming
