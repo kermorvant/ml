@@ -10,9 +10,14 @@ Les images originales sont toutes de la même taille (28x28 pixels), les chiffre
 
 Nous allons travailler sur une version réduite en 8x8 pixels, disponible [ici](http://data.teklia.com/csexed/MNIST_all_features.csv.gz).
 
-Connectez-vous à dataiku.teklia.com avec votre nom d'utilisateur et votre mot de passe.
+Connectez-vous à academy.teklia.com avec votre nom d'utilisateur et votre mot de passe.
 
 Aller dans le menu "dataset" et cliquer sur "Import your first dataset", puis "Files", "Upload you files". Ajouter le fichier MNIST_all_features.csv.gz.
+
+
+<p align="center">
+  <img src="images/mnist_import.png" width="600" >
+</p> 
 
 Une fois le fichier téléchargé, cliquer sur "PREVIEW", sélectionner l'option "Parse next line as column headers", puis "Create".
 
