@@ -59,7 +59,7 @@ La dernière colonne "Churn" contient une variable indicatrice d'un client ayant
 
 ### Clustering des données
 
-> * cliquer sur "Lab" (bouton bleu en haut à droite), puis *Quick model* et *Clustering*
+> * cliquer sur "Lab" (bouton bleu en haut à droite), puis *Quick model*,  *Clustering*, *Quicl model*
 
 <p align="center">
   <img src="images/click_lab.png" width="600" >
