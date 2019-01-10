@@ -25,7 +25,7 @@ Une fois le dataset créé, changer le type de la dernière colonne (la renommer
 
 ## Entrainement des classifieurs 
 
-Dans le dataset "MNIST_all_features", cliquer sur "LAB" puis, "Quick model", "Prediction" puis sélectionner la variable target "Class" et "Simple formula".
+Dans le dataset "MNIST_all_features", cliquer sur "LAB" puis, "Quick model", "Prediction" puis sélectionner la variable target "Class", "Automated Machine Learning" et "Quick Prototype".
 
 Aller dans le menu DESIGN : 
 * dans l'onglet target, vérifier la distribution des classes, la classe cible et le type de prédiction qui doit être *multiclass classification*.
