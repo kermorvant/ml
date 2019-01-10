@@ -21,7 +21,7 @@ Aller dans le menu "dataset" et cliquer sur "Import your first dataset", puis "F
 
 Une fois le fichier téléchargé, cliquer sur "PREVIEW", sélectionner l'option "Parse next line as column headers", puis "Create".
 
-Une fois le dataset créé, changer le type de la dernière colonne (class) de "Interger" en "Text".
+Une fois le dataset créé, changer le type de la dernière colonne (la renommer en "class" si besoin) de "Interger" en "Text".
 
 ## Entrainement des classifieurs 
 
