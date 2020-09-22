@@ -75,10 +75,11 @@ Aller dans l'onglet "Confusion matrix".
 >* Quelles sont les classes les mieux classifiées ?
 >* Quelles sont les classes les moins bien classifiées ? Avec quelles autres classes sont-elle confondues.
 
-Revenir au menu DESIGN et augmenter le nombre d'exemples à 60000 et tester avec le meilleure valeur de k obtenue précédemment. Relancer l'apprentissage. Noter l'augmentation du temps des expériences.
+Revenir au menu DESIGN et augmenter le nombre d'exemples à 60000 et tester avec le meilleure valeur de k obtenue précédemment. Relancer l'apprentissage. Noter l'augmentation du temps de l'expériences et l'augmentation des performance *"There is no better data than more data"*.
 
 Réduire à 10 000 exemples :
 
 >* Tester un classifieur par régression logistique (Logistic Regression) avec les paramètres par défaut
 >* Tester un classifieur SVM (Support Vector Machine) avec les paramètres par défaut
+> Quel est votre meilleur model obtenu, avec quelle performance ?
 	
