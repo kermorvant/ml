@@ -8,7 +8,7 @@ Dans ce cas pratique nous allons étudier plusieurs méthodes pour la classifica
 
 Les images originales sont toutes de la même taille (28x28 pixels), les chiffres sont centrés dans l'image et il n'y a pas de bruit.
 
-Nous allons travailler sur une version réduite en 8x8 pixels, disponible [ici](http://data.teklia.com/csexed/MNIST_all_features.csv.gz).
+Nous allons travailler sur une version réduite en 8x8 pixels, disponible [ici](http://data.teklia.com/ml-course/MNIST_all_features.csv.zip).
 
 Connectez-vous à academy.teklia.com avec votre nom d'utilisateur et votre mot de passe.
 
