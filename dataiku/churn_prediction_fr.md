@@ -1,7 +1,7 @@
 # Prédiction de l'attrition
 Dans ce cas pratique, nous allons entrainer un modèle supervisé pour prédire si un client est susceptible de résilier son abonnement (*churn prediction*). Cela permettra de définir des actions marketing afin de retenir ces clients.
 
-Le dataset utilisé sera `telco_customers_scored`. 
+Le dataset utilisé sera `telco_customers_scored`.
 
 **Note** : ce cas pratique peut être réalisé à la suite du cas pratique [Segmentation de clientèle par clustering](customer_clustering_fr.html) ou bien directement. Dans ce dernier cas, remplacer le dataset `telco_customers_scored` par `telco_customers` (sans les clusters).
 
@@ -10,23 +10,23 @@ Le dataset utilisé sera `telco_customers_scored`.
 
 Le premier modèle de prédiction étudié est un modèle linéaire. Ce modèle suppose que le churn peut être prédit par une combinaison linéaire des variables explicatives (*features*). Bien que simpliste, ce modèle donne souvent de bons résultats et constitue généralement un modèle de référence (*baseline*). Il n'est pas adapté quand :
 
-* la variable a prédire dépend de combinaison non linéaire des features; 
+* la variable a prédire dépend de combinaison non linéaire des features;
 * les variables explicatives sont corrélées;
 * le nombre de variables explicatives est très grand ; il faut alors sélectionner les variables.
 
 > * Pour notre cas de prédiction de *Churn*, le modèle vous semble-t-il adapté ? Pourquoi ?
 
-Même si le modèle n'est pas adapté, nous allons réaliser un entrainement pour étudier les différents paramètres d'un entrainement sur un modèle simple : 
+Même si le modèle n'est pas adapté, nous allons réaliser un entrainement pour étudier les différents paramètres d'un entrainement sur un modèle simple :
 
 > * Visuliser le dataset `telco_customers_scored`
-> * Cliquer sur *LAB*, *Visual Analysis* puis *QUICK MODEL* et *Prediction*
-> * Choisir la variable à prédire : *Churn* puis *Simple Formula* puis *Create*
+> * Cliquer sur *LAB*, *Visual Analysis* puis *AutoML prediction*
+> * Choisir la variable à prédire : *Churn* puis *Quick prototype* puis *Create*
 
 Une fois le modèle créé, aller dans *DESIGN* puis *Target*. Nous voyons une analyse de la distribution des clients dans les deux classes : Churn/NoChurn
 
 <p align="center">
   <img src="images/churn_target.png" width="600" >
-</p> 
+</p>
 
 Nous avons un problème avec des classes déballancées : il y a beaucoup moins de Churn que de NoChurn. Mais c'est la prédiction de Churn qui nous intéresse, il faudra donc se focaliser sur la classe minoritaire.
 
@@ -38,13 +38,13 @@ Dans la section *Train / Test Set*, nous voyons les paramètres de découpage de
 
 Dans notre cas, 80% des données sont utilisées pour l'entrainement et 20% pour l'estimation de la qualité du modèle.
 
-Dans la section *Features handling*, nous voyons que certaines variables n'ont pas été sélectionnées : par exemple *State* a été désactivée car cette variable semblait avoir trop de modalités (*DSS rejected this feature because it had too many categories for the task at hand*).
+Dans la section *Features handling*, nous voyons que certaines variables n'ont pas été sélectionnées : par exemple *phone* a été désactivée car cette variable semblait être un identifiant (*DSS has rejected this feature because this feature looks like a unique identifier*).
 
-Dans la section *Algorithms*, un seul algorithme a été sélectionné, *Lasso Path*. Lancer l'entrainement du modèle avec le bouton vert *TRAIN*. Une fois le modèle entrainé, Cliquer dessus pour voir les résultats. L'accuracy du modèle doit être à 0.85, ce qui signifie que le modèle fait 15% d'erreur lors de la prédiction Churn/NoChurn sur de nouvelles données. Cependant, il faut regarder plus en détail car seul la préduction du Churn nous intéresse.
+Dans la section *Algorithms*, sélectionner, *Lasso LARS*. Lancer l'entrainement du modèle avec le bouton vert *TRAIN*. Une fois le modèle entrainé, Cliquer dessus pour voir les résultats. L'accuracy du modèle doit être à 0.857, ce qui signifie que le modèle fait 15% d'erreur lors de la prédiction Churn/NoChurn sur de nouvelles données. Cependant, il faut regarder plus en détail car seul la prédi  ction du Churn nous intéresse.
 
 > Cliquer sur *PERFORMANCE / Confusion matrix*
 
-Cette page présente une analyse détaillée des performances et en particulier la matrice de confusion : 
+Cette page présente une analyse détaillée des performances et en particulier la matrice de confusion :
 
 <p align="center">
   <img src="images/churn_confusion_matrix.png" width="600" >
@@ -62,7 +62,7 @@ Dans le cas de la détection de Churn, nous voulons concentrer notre action sur 
 
 Une courbe lift donne le gain par rapport à l'aléatoire par décile : sur notre exemple, sur les 10% des Churn les plus probables, notre modèle prédit 3.88 fois mieux que l'aléatoire, ce qui est un bon score. Nous pourrions donc concentrer les campagnes marketing sur ces clients.
 
-Il est aussi possible d'analyser le modèle lui-même, par exemple dans quelle mesure il est capable de séparer les deux classes Churn/NoChurn. 
+Il est aussi possible d'analyser le modèle lui-même, par exemple dans quelle mesure il est capable de séparer les deux classes Churn/NoChurn.
 
 > Cliquer sur *PERFORMANCE / Density chart*
 
@@ -99,39 +99,39 @@ Dans cette section, nous allons recherche le meilleur modèle pour la prédictio
 
 Pour cette expérience, deux modèles ont été sélectionnés : RandomForest et XGBoost. Ces sont actuellement les modèles qui donnent le plus souvent les meilleures performances. Cependant, dans le cas où les données d'apprentissage sont disponibles en très grandes quantité, des réseaux de neurones profonds (*DeepLearning*) peuvent alors donner de meilleurs résultats.
 
-Pour trouver le meilleur algorithme, il faut tester plusieurs valeurs pour les paramètres. Dans notre cas, pour le modèle de RandomForest, on va tester plusieurs valeurs pour *Maximum depth of tree* et pour *Minimum samples per leaf* et idem pour le modèle XGBoost. Cela implique dont l'apprentissage et l'évaluation d'un grand nombre de modèles. 
+Pour trouver le meilleur algorithme, il faut tester plusieurs valeurs pour les paramètres. Dans notre cas, pour le modèle de RandomForest, on va tester plusieurs valeurs pour *Maximum depth of tree* et pour *Minimum samples per leaf* et idem pour le modèle XGBoost. Cela implique dont l'apprentissage et l'évaluation d'un grand nombre de modèles.
 
 > * Lancer l'entrainement avec le bouton vert *TRAIN*
 
 Un message indique que  338 modèles vont être entraînés et évalués. Le meilleur modèle est un modèle de *random forest* avec un taux de classification correcte (*accuracy*) de 97%.
 
 > * Cliquer sur le modèle pour l'explorer
-> * Sélectionner *PERFORMANCE / Confusion matrix* 
+> * Sélectionner *PERFORMANCE / Confusion matrix*
 
 La matrice de confusion est bien meilleure que pour le modèle linéaire.
 
 > * Sur les 666 exemples de tests, combien d'exemples ne sont pas correctement classifiés ? Retrouvez-vous l'*accuracy* de 97% ?
 
-Examinons la courbe de lift 
+Examinons la courbe de lift
 
 > * Sélectionner *PERFORMANCE / Lift charts*
 > * Quelle est la valeur de la lift pour le premier décile ?
 
-Examinons la distribution des scores : 
+Examinons la distribution des scores :
 
-> * Sélectionner sur *PERFORMANCE / Density chart* ; 
+> * Sélectionner sur *PERFORMANCE / Density chart* ;
 > * Notez que les distributions sont mieux séparées que pour le modèle linéaire.
 
 
-Examinons les variables les plus importantes : 
+Examinons les variables les plus importantes :
 
-> * Sélectionner sur *INTERPRETATION / Variables importance* ; 
+> * Sélectionner sur *INTERPRETATION / Variables importance* ;
 
 <p align="center">
   <img src="images/churn_randomforest_variables.png" width="600" >
 </p>
 
-Un modèle RandomForest est composé de nombreux arbres de décision participant à la décision finale par un vote pondéré. Il n'est donc pas aisé d'examiner chacun des arbres. Par contre, il est possible de visualiser quelles sont les variables les plus utilisées et les plus importantes pour l'ensemble des arbres. Dans notre cas, la variable la plus importante est `Total_Charge`, suivie de `CustServ_Calls`. 
+Un modèle RandomForest est composé de nombreux arbres de décision participant à la décision finale par un vote pondéré. Il n'est donc pas aisé d'examiner chacun des arbres. Par contre, il est possible de visualiser quelles sont les variables les plus utilisées et les plus importantes pour l'ensemble des arbres. Dans notre cas, la variable la plus importante est `Total_Charge`, suivie de `CustServ_Calls`.
 
 ## Entrainement d'un modèle interprêtable : Arbre de décision
 
@@ -150,4 +150,3 @@ Une fois le modèle entrainé,  le sélectionner puis afficher *INTERPRETATION /
 L'arbre de décision présente les critères utilisés, les couleurs les 2 classes (Churn en bleu, NoChurn en rouge) et l'épaisseur des traits le nombre d'exemple classifiés par la branche concernée.
 
 > Donner la séquence de questions permettant de classifier 75% des NoChurn.
-
